@@ -1,0 +1,418 @@
+.rouge-script-regular {
+  font-family: "Rouge Script", cursive;
+  font-weight: 1000;
+  font-style: normal;
+  font-size: 40px;
+  text-transform: capitalize;
+  text-decoration: dashed;
+}
+
+/* Remove effects for dropdown toggles */
+.dropdown .nav-link::after,
+.dropdown .nav-link::before {
+  display: none;
+}
+.theme-text-color {
+  color: rgb(253, 145, 12);
+}
+/* =================================================================
+   Professional Dropdown Styling
+   ================================================================= */
+
+/* 1. Main dropdown container: border, width, and professional look */
+.professional-dropdown-menu {
+  min-width: 220px; /* Increase the width of the box */
+  font-size: 1.05rem; /* Slightly increase font size for readability */
+  border: 1px solid #9e9487; /* Add a subtle, professional border */
+  border-radius: 0.5rem; /* Softer rounded corners */
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08); /* A soft, modern shadow */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* 2. Style for individual items */
+.professional-dropdown-menu .dropdown-item {
+  padding: 0.6rem 1.25rem; /* Add more comfortable spacing */
+  transition: all 0.2s ease-in-out; /* Smooth transition for hover effect */
+  border-radius: 0.25rem; /* Slight rounding on item hover */
+  margin: 0 0.5rem; /* Add horizontal margin to items */
+  width: auto; /* Required for the margin to work */
+}
+
+/* 3. Hover effect: darker beige background */
+.professional-dropdown-menu .dropdown-item:hover,
+.professional-dropdown-menu .dropdown-item:focus {
+  background-color: #eae0d5; /* A professional, darker beige color */
+  color: #1a1a1a; /* Ensure text is readable on the new background */
+  transform: translateX(3px); /* A subtle movement effect on hover */
+  font-weight: bold;
+}
+
+/* 4. Enable hover to open dropdown on DESKTOP devices */
+/* This media query ensures this only applies to screens larger than mobile */
+@media (min-width: 992px) {
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Ensures no gap that could accidentally close it */
+    /* Adds a subtle fade-in animation */
+    animation: fadeIn 0.2s ease-out;
+  }
+}
+
+/* A simple fade-in keyframe animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 5. On mobile, the dropdown will stack inside the collapsed menu.
+   These styles ensure it looks clean. */
+@media (max-width: 991.98px) {
+  .professional-dropdown-menu {
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    left: 10%;
+    width: 100%;
+  }
+  .professional-dropdown-menu .dropdown-item:hover,
+  .professional-dropdown-menu .dropdown-item:focus {
+    background-color: #eae0d5; /* A professional, darker beige color */
+    color: #1a1a1a; /* Ensure text is readable on the new background */
+    transform: translateX(3px); /* A subtle movement effect on hover */
+    font-weight: bold;
+  }
+}
+
+/* --------------footer-------------------- */
+/* =================================================================
+   Custom Theme Styles for Footer
+   ================================================================= */
+
+/* Main footer area */
+.site-footer {
+  background-color: #f8f9fa; /* <-- Replace with your theme's light background color */
+  color: #6c757d; /* <-- Replace with your theme's secondary text color */
+}
+
+/* Headings within the footer */
+.footer-heading,
+.footer-logo {
+  color: #212529; /* <-- Replace with your theme's primary text/dark color */
+}
+
+/* Bottom bar (copyright and credit) */
+.footer-bottom-bar {
+  background-color: #212529; /* <-- Replace with your theme's dark/primary background color */
+  color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* A standard muted text color for dark backgrounds */
+}
+
+/* Link in the bottom bar */
+.footer-credit-link {
+  color: #ffffff; /* <-- Replace with your theme's light text color */
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-credit-link:hover {
+  opacity: 0.8;
+}
+
+/* -------------------Customers Section ---------------------- */
+/* =================================================================
+   Subtle Customer Logos Section
+   ================================================================= */
+
+/* On hover, bring the logo to full color and scale it up slightly */
+.logo-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px; /* space between rows */
+}
+
+.logo-wrapper {
+  text-align: center;
+  margin: 10px;
+}
+
+.top-row,
+.bottom-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.85);
+  transition: all 0.5s ease;
+}
+
+.logo-img:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.1);
+}
+
+.logo-placeholder {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #ddd;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+}
+.logo-placeholder:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.1);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #c4c4c4;
+  color: #4268a1;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+}
+
+.logo-name {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@media (max-width: 992px) {
+  .logo-img,
+  .logo-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+  .logo-name {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-img,
+  .logo-placeholder {
+    width: 60px;
+    height: 60px;
+  }
+  .logo-name {
+    font-size: 0.75rem;
+  }
+}
+
+/* Swiper bullets */
+.custom-swiper .swiper-pagination-bullet {
+  background-color: rgb(99, 98, 98); /* default color for bullets */
+  opacity: 0.7;
+}
+
+.custom-swiper .swiper-pagination-bullet-active {
+  background-color: rgb(99, 98, 98); /* active bullet color (darker beige) */
+  opacity: 1;
+}
+
+/* Optional: Navigation arrows color */
+.custom-swiper .swiper-button-next,
+.custom-swiper .swiper-button-prev {
+  color: rgb(99, 98, 98); /* beige for arrows */
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.main-timeline {
+  position: relative;
+}
+.main-timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: #e9ecef;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  border-radius: 2px;
+}
+
+.timeline-progress {
+  position: absolute;
+  width: 4px;
+  background-color: #dc3545;
+  top: 0;
+  left: 50%;
+  margin-left: -2px;
+  height: 0;
+  border-radius: 2px;
+  z-index: 1;
+  transition: height 0.3s ease-out;
+}
+
+.timeline-item {
+  padding: 1em 40px;
+  position: relative;
+  width: 50%;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+}
+
+.timeline-item.in-view {
+  opacity: 1;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -10px;
+  background-color: #f8f9fa;
+  border: 4px solid #e9ecef;
+  top: 24px;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-item.in-view::after {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.timeline-item .card-title,
+.timeline-item .card-text {
+  opacity: 0;
+  transition: opacity 0.4s ease, font-weight 0.4s ease;
+}
+
+.timeline-item.in-view .card-title {
+  opacity: 1;
+  font-weight: bold;
+}
+.timeline-item.in-view .card-title:hover {
+  opacity: 1;
+  font-weight: bold;
+}
+
+.timeline-item.in-view .card-text {
+  opacity: 1;
+  font-weight: 500;
+  color: #212529;
+}
+
+.timeline-item.in-view .card-text:hover {
+  opacity: 1;
+  font-weight: 500;
+  color: #212529;
+}
+
+.left {
+  left: 0;
+  padding-right: 20px;
+}
+
+.right {
+  left: 50%;
+  padding-left: 20px;
+}
+
+.timeline-item::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 30px;
+  width: 0;
+  z-index: 1;
+  border: medium solid white;
+}
+
+.left::before {
+  right: 30px;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.right::before {
+  left: 30px;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.right::after {
+  left: -10px;
+}
+
+@media (max-width: 768px) {
+  .main-timeline::after,
+  .timeline-progress {
+    left: 25px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 55px;
+    padding-right: 15px;
+  }
+
+  .timeline-item::before {
+    left: 45px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+
+  .right {
+    left: 0%;
+  }
+}
+
+/* -----------------COntact Us---------------- */
+/* Contact Us Form Enhancements */
+#message {
+  resize: none;
+}
+
+.btn-danger {
+  transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: rgb(253, 145, 12);
+  transform: translateY(-2px);
+}
