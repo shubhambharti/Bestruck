@@ -116,7 +116,7 @@ export default function AboutUs() {
                                 We did some interesting stuff in our field of work.
                             </h3>
                             <p data-aos="fade-left" data-aos-delay="200">
-                                With a commitment to precision engineering, we craft durable components that meet the highest industry standards. Each product is a testament to our dedication to quality and reliability.
+                                "With an unwavering commitment to precision engineering, we meticulously design and craft components that not only meet but consistently exceed the most stringent industry standards. Our dedication extends beyond mere manufacturing; each durable product is forged through rigorous processes, serving as a testament to our steadfast pursuit of uncompromising quality and reliability in every single item we deliver."
                             </p>
                             <p>
                                 <Link
