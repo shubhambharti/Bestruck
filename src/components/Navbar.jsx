@@ -76,13 +76,13 @@ export default function Navbar() {
     return (
         <nav
             id="navScroll"
-            className={`navbar navbar-expand-lg py-3 navbar-light fixed-top ${isScrolled ? "scrolled shadow-sm bg-white" : "bg-light"
+            className={`navbar navbar-expand-lg pb-3 navbar-light fixed-top ${isScrolled ? "scrolled shadow-sm bg-white" : "bg-light"
                 }`}
         >
             <div className="container">
                 {/* Brand */}
                 <a className="navbar-brand pe-4 fs-4" href="/">
-                    <span className="ms-1 rouge-script-regular fw-bolder">
+                    <span className="ms-1 fw-bolder">
                         {import.meta.env.VITE_SITE_NAME?.split(" ")[0]}
                     </span>
                 </a>
