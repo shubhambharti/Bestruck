@@ -76,7 +76,7 @@ export default function Navbar() {
     return (
         <nav
             id="navScroll"
-            className={`navbar navbar-expand-lg pb-1 navbar-light fixed-top ${isScrolled ? "scrolled shadow-sm bg-white" : "bg-light"
+            className={`navbar navbar-expand-lg pb-0 navbar-light fixed-top ${isScrolled ? "scrolled shadow-sm bg-white" : "bg-light"
                 }`}
         >
             <div className="container">
