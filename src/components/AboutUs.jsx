@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function AboutUs() {
     return (
@@ -112,24 +113,20 @@ export default function AboutUs() {
                                 className="py-5 border-top border-dark"
                                 data-aos="fade-left"
                             >
-                                We did some interesting stuff in our field of work. For example
-                                we collect a lot of these free photos and use them on our
-                                website.
+                                We did some interesting stuff in our field of work.
                             </h3>
                             <p data-aos="fade-left" data-aos-delay="200">
-                                Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-                                tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-                                fermentum massa justo sit amet risus.
+                                With a commitment to precision engineering, we craft durable components that meet the highest industry standards. Each product is a testament to our dedication to quality and reliability.
                             </p>
                             <p>
-                                <a
-                                    href="#"
+                                <Link
+                                    to="/product/backrestmounting"
                                     className="link-fancy link-dark"
                                     data-aos="fade-left"
                                     data-aos-delay="400"
                                 >
-                                    Learn more
-                                </a>
+                                    View More
+                                </Link>
                             </p>
                         </div>
                     </div>
