@@ -155,7 +155,7 @@ export default function ContactUsPage() {
 
                             <iframe
                                 title="map"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.4824945443486!2d77.2195!3d28.6328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b4afed2f%3A0x123456789abcdef!2sConnaught%20Place%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1670000000000"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1778.7959363523548!2d81.06037337431903!3d26.916444822989327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399959569f87619b%3A0x7148a0c8b1765421!2sM.F%20ENGGENRING%20AND%20FABRICATION!5e0!3m2!1sen!2sin!4v1759225694917!5m2!1sen!2sin"
                                 width="100%"
                                 height="250"
                                 style={{ border: 0, borderRadius: "12px" }}
