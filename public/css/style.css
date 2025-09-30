@@ -13,7 +13,7 @@
   display: none;
 }
 .theme-text-color {
-  color: rgb(253, 145, 12);
+  color: rgb(173, 70, 39);
 }
 /* =================================================================
    Professional Dropdown Styling
@@ -270,7 +270,7 @@ body {
 .timeline-progress {
   position: absolute;
   width: 4px;
-  background-color: #dc3545;
+  background-color: rgb(173, 70, 39);
   top: 0;
   left: 50%;
   margin-left: -2px;
@@ -307,8 +307,8 @@ body {
 }
 
 .timeline-item.in-view::after {
-  background-color: #dc3545;
-  border-color: #dc3545;
+  background-color: rgb(173, 70, 39);
+  border-color: rgb(173, 70, 39);
 }
 
 .timeline-item .card-title,
@@ -413,6 +413,6 @@ body {
 }
 
 .btn-danger:hover {
-  background-color: rgb(253, 145, 12);
+  background-color: rgb(173, 70, 39);
   transform: translateY(-2px);
 }
