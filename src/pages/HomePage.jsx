@@ -9,7 +9,7 @@ export default function HomePage() {
             <div className="w-100 overflow-hidden bg-gray-100" id="top">
                 <div className="container position-relative">
                     <div className="col-12 col-lg-8 mt-0 h-100 position-absolute top-0 end-0 bg-cover" data-aos="fade-left"
-                        style={{ backgroundImage: "url(/img/banner1.png)" }}></div>
+                        style={{ backgroundImage: "url(/img/banner1.png)", borderRadius: "20px" }}></div>
                     <div className="row">
                         <div className="col-lg-7 py-vh-6 position-relative" data-aos="fade-right">
                             <h1 className="display-1 fw-bold mt-5">Building the Future of Auto Parts!</h1>
