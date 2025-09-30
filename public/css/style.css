@@ -247,11 +247,12 @@
 .custom-swiper .swiper-button-prev {
   color: rgb(99, 98, 98); /* beige for arrows */
 }
-
 body {
   background-color: #f8f9fa;
+  padding-top: 70px;
 }
 
+/* TIMELINE BASE */
 .main-timeline {
   position: relative;
 }
@@ -321,18 +322,7 @@ body {
   opacity: 1;
   font-weight: bold;
 }
-.timeline-item.in-view .card-title:hover {
-  opacity: 1;
-  font-weight: bold;
-}
-
 .timeline-item.in-view .card-text {
-  opacity: 1;
-  font-weight: 500;
-  color: #212529;
-}
-
-.timeline-item.in-view .card-text:hover {
   opacity: 1;
   font-weight: 500;
   color: #212529;
@@ -342,7 +332,6 @@ body {
   left: 0;
   padding-right: 20px;
 }
-
 .right {
   left: 50%;
   padding-left: 20px;
@@ -363,42 +352,78 @@ body {
   border-width: 10px 0 10px 10px;
   border-color: transparent transparent transparent white;
 }
-
 .right::before {
   left: 30px;
   border-width: 10px 10px 10px 0;
   border-color: transparent white transparent transparent;
 }
-
 .right::after {
   left: -10px;
 }
 
+/* 📱 Mobile Fix */
 @media (max-width: 768px) {
+  body {
+    padding-top: 56px; /* Bootstrap default mobile navbar height */
+  }
+  /* Stop horizontal overflow */
+  body,
+  html {
+    overflow-x: hidden;
+  }
+
+  /* Timeline fix for mobile */
+  @media (max-width: 768px) {
+    .main-timeline {
+      margin: 0 auto;
+      padding: 0 2px; /* keep safe padding */
+    }
+
+    .timeline-item {
+      width: 100% !important;
+      left: 0 !important;
+      padding: 1em 20px; /* reduce padding */
+    }
+
+    .main-timeline::after,
+    .timeline-progress {
+      left: 20px !important; /* align line inside viewport */
+      margin-left: 0 !important;
+    }
+
+    .timeline-item::after {
+      left: 10px !important;
+      right: auto !important;
+    }
+  }
+
   .main-timeline::after,
   .timeline-progress {
-    left: 25px;
+    left: 20px; /* keep line to left */
   }
 
   .timeline-item {
     width: 100%;
-    padding-left: 55px;
+    padding-left: 60px; /* space for marker & line */
     padding-right: 15px;
+    margin-bottom: 30px;
   }
 
   .timeline-item::before {
-    left: 45px;
+    left: 45px; /* arrow points from line */
     border-width: 10px 10px 10px 0;
     border-color: transparent white transparent transparent;
   }
 
-  .left::after,
-  .right::after {
-    left: 15px;
+  .timeline-item::after {
+    left: 15px; /* marker aligned to line */
+    right: auto;
   }
 
+  /* Force alignment */
+  .left,
   .right {
-    left: 0%;
+    left: 0;
   }
 }
 

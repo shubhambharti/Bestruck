@@ -58,8 +58,8 @@ export default function HistoryPage() {
                 totalTimelineHeight,
                 Math.max(0, scrollPosition - timelineTop)
             );
-            const scrollPercent = progressHeight / totalTimelineHeight;
 
+            const scrollPercent = progressHeight / totalTimelineHeight;
             progressLine.style.height = `${scrollPercent * 100}%`;
 
             const timelineItems = timeline.querySelectorAll(".timeline-item");
@@ -80,22 +80,40 @@ export default function HistoryPage() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+    // useEffect(() => {
+    //     const navbar = document.getElementById("navScroll");
+    //     const hero = document.querySelector(".hero-section");
+    //     if (navbar && hero) {
+    //         hero.style.paddingTop = navbar.offsetHeight + "px";
+    //     }
+    // }, []);
+
 
     return (
-        <div className="container my-5  py-5 p-md-5">
-            <main>
-                <div className="row">
-                    <div className="col-12">
-                        <div className="text-center mb-5" data-aos="fade-down">
-                            <h1 className="display-5 mt-1 fw-bold">Our Journey</h1>
-                            <p className="lead text-muted">
-                                A timeline of our company's most significant milestones and
-                                achievements.
-                            </p>
-                        </div>
-                    </div>
+        <div className="history-page">
+            {/* Hero Section */}
+            <section
+                className="hero-section text-white d-flex align-items-center justify-content-center"
+                style={{
+                    minHeight: "50vh",
+                    backgroundImage: "url('/img/herosection3.png')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                }}
+                data-aos="fade-in"
+            >
+                <div className="text-center p-4 bg-opacity-50 rounded">
+                    <h1 className="display-4 fw-bold">Our Journey</h1>
+                    <p className="lead">
+                        A timeline of our company's most significant milestones and
+                        achievements.
+                    </p>
                 </div>
+            </section>
 
+
+            {/* Timeline Section */}
+            <section className="container my-5">
                 <div className="main-timeline" ref={timelineRef}>
                     {/* Progress Line */}
                     <div className="timeline-progress" ref={timelineProgressRef}></div>
@@ -124,7 +142,7 @@ export default function HistoryPage() {
                         </div>
                     ))}
                 </div>
-            </main>
+            </section>
         </div>
     );
 }
