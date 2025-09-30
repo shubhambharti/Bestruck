@@ -191,7 +191,7 @@ export default function ProductPage() {
                         <h2 className="card-title fw-bold" data-aos="fade-up">{product.name}</h2>
                         <p className="card-text text-muted" data-aos="fade-up" data-aos-delay="200">{product.description}</p>
                         <div className="d-grid gap-2 mt-3" data-aos="fade-up" data-aos-delay="400">
-                            <Link to="/enquiry" className="btn btn-primary btn-lg">
+                            <Link to="/contactus" className="btn btn-primary btn-lg">
                                 Enquire Now
                             </Link>
                             <a
