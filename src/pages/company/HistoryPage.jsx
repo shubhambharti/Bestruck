@@ -87,7 +87,7 @@ export default function HistoryPage() {
                 <div className="row">
                     <div className="col-12">
                         <div className="text-center mb-5" data-aos="fade-down">
-                            <h1 className="display-5 fw-bold">Our Journey</h1>
+                            <h1 className="display-5 mt-1 fw-bold">Our Journey</h1>
                             <p className="lead text-muted">
                                 A timeline of our company's most significant milestones and
                                 achievements.
