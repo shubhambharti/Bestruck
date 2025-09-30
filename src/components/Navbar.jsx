@@ -82,7 +82,7 @@ export default function Navbar() {
             <div className="container">
                 {/* Brand */}
                 <a className="navbar-brand pe-4 fs-4" href="/">
-                    <span className="ms-1 fw-bolder">
+                    <span className="ms-1 rouge-script-regular fw-bolder">
                         {import.meta.env.VITE_SITE_NAME?.split(" ")[0]}
                     </span>
                 </a>
