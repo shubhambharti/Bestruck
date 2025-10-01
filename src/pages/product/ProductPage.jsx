@@ -11,9 +11,12 @@ import "aos/dist/aos.css";
 
 // 🔹 Slugify helper
 function slugify(name) {
-    return name.toLowerCase().replace(/[^a-z0-9]+/g, "");
+    return name
+        .toLowerCase()
+        .replace(/\s+/g, "")
+        .replace(/[\/&]/g, "")
+        .replace(/[^a-z0-9-]/g, "");
 }
-
 // 🔹 Product data
 const products = [
     {
