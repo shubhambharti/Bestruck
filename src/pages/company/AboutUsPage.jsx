@@ -118,7 +118,7 @@ export default function AboutUsPage() {
             <section className="text-center py-5 bg-primary text-white" style={{ borderRadius: "20px 20px 0 0" }} data-aos="zoom-in">
                 <h3 className="fw-bold mb-3">Ready to Get Started?</h3>
                 <p className="mb-4">Join us and experience excellence in every product we deliver.</p>
-                <Link to="/contact" className="btn btn-light btn-lg">
+                <Link to="/contactus" className="btn btn-light btn-lg">
                     Contact Us
                 </Link>
             </section>
