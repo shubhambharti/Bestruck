@@ -23,7 +23,7 @@ export default function Customer() {
     }
 
     return (
-        <div className="customers-section py-4">
+        <div className="customers-section py-4 theme-color">
             <div className="container-fluid">
                 <h6 className="text-center text-muted mb-4">
                     Trusted by leading companies worldwide

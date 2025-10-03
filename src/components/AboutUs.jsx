@@ -5,7 +5,7 @@ export default function AboutUs() {
     return (
         <div>
             {/* Services Section */}
-            <div className="py-vh-5 w-100 overflow-hidden" id="services">
+            <div className="py-vh-5 w-100 overflow-hidden theme-color" id="services">
                 <div className="container">
                     <div className="row d-flex justify-content-end">
                         <div className="col-lg-8" data-aos="fade-down">
@@ -72,7 +72,7 @@ export default function AboutUs() {
             </div>
 
             {/* About Us Section */}
-            <div className="py-vh-4 bg-gray-100 w-100 overflow-hidden" id="aboutus">
+            <div className="py-vh-4  theme-color w-100 overflow-hidden" id="aboutus">
                 <div className="container">
                     <div className="row d-flex justify-content-between align-items-center">
                         <div className="col-lg-6">

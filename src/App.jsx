@@ -11,6 +11,8 @@ import HistoryPage from "./pages/company/HistoryPage";
 import ScrollToTop from "./components/ScrollToTop";
 import ContactUsPage from "./pages/ContactUsPage";
 import PeoplePage from "./pages/PeoplePage";
+import CareerPage from "./pages/CareerPage";
+import MissionVisionPage from "./pages/company/MissionVisionPage";
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<AboutUsPage />} />
         <Route path="/history" element={<HistoryPage />} />
+        <Route path="/mission&vision" element={<MissionVisionPage />} />
         <Route path="/people" element={<PeoplePage />} />
+        <Route path="/career" element={<CareerPage />} />
 
         <Route path="/product/:slug" element={<ProductPage />} />
         <Route path="/contactus" element={<ContactUsPage />} />

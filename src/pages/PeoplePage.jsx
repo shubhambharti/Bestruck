@@ -1,14 +1,11 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
 import { FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import Seo from "../components/Seo"
 
-// --- Team Member Data ---
-// Simply add or edit objects in this array to update the page.
 const teamMembers = [
     {
         name: "Priya Sharma",
         role: "Chief Executive Officer",
-        imageUrl: "/img/team/member1.jpg",
+        imageUrl: "/img/person1.jpg",
         bio: "Priya leads our company with a vision for the future, combining innovative strategies with a deep commitment to our clients.",
         social: {
             linkedin: "#",
@@ -19,7 +16,7 @@ const teamMembers = [
     {
         name: "Rohan Kumar",
         role: "Chief Technology Officer",
-        imageUrl: "/img/team/member2.jpg",
+        imageUrl: "/img/person2.jpg",
         bio: "Rohan is the architect of our technology, driving the engineering team to build robust and scalable solutions.",
         social: {
             linkedin: "#",
@@ -30,7 +27,7 @@ const teamMembers = [
     {
         name: "Anjali Verma",
         role: "Head of Operations",
-        imageUrl: "/img/team/member3.jpg",
+        imageUrl: "/img/person6.jpg",
         bio: "Anjali ensures that our operations run smoothly and efficiently, focusing on quality and process optimization.",
         social: {
             linkedin: "#",
@@ -40,7 +37,7 @@ const teamMembers = [
     {
         name: "Vikram Singh",
         role: "Lead Product Designer",
-        imageUrl: "/img/team/member4.jpg",
+        imageUrl: "/img/person4.jpg",
         bio: "Vikram’s creative vision shapes our products, blending user-centric design with cutting-edge aesthetics.",
         social: {
             twitter: "#",
@@ -51,31 +48,45 @@ const teamMembers = [
 
 export default function PeoplePage() {
     return (
-        <div className="people-page">
-            <Helmet>
-                <title>Meet Our Team | Your Company Name</title>
-                <meta name="description" content="Get to know the passionate and talented individuals who drive our company forward." />
-            </Helmet>
+        <div className="people-page theme-color">
+            <Seo
+                title="Our Team"
+                description={`Meet the talented engineers, fabricators, and leadership driving ${import.meta.env.VITE_SITE_NAME || "MF Engineering And Fabrication"}'s success.`}
+            />
 
             {/* --- Hero Section --- */}
-            <section className="people-hero text-center py-5">
-                <div className="container">
-                    <h1 className="display-4 fw-bold">Meet Our Team</h1>
-                    <p className="lead text-muted">The passionate individuals driving our vision forward.</p>
+            <section
+                className="text-white d-flex align-items-center justify-content-center text-center py-5"
+                style={{
+                    minHeight: "50vh",
+                    backgroundImage: "url('/img/herosection3.png')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    position: "relative"
+                }}
+                data-aos="fade-in"
+            ><div style={{
+                position: "absolute",
+                top: 0, left: 0, right: 0, bottom: 0,
+                backgroundColor: "rgba(0, 0, 0, 0.7)", /* Dark overlay */
+            }}></div>
+                <div className="container" style={{ zIndex: 1 }}>
+                    <h1 className="display-4 fw-bold mb-3 animate__animated animate__fadeInDown">Meet Our Team</h1>
+                    <p className="lead mb-4 animate__animated animate__fadeInUp">The passionate individuals driving our vision forward.</p>
                 </div>
             </section>
 
             {/* --- Team Grid Section --- */}
-            <section className="team-grid py-5">
+            <section className="team-grid theme-color py-5">
                 <div className="container">
                     <div className="row g-4">
                         {teamMembers.map((member, index) => (
-                            <div key={index} className="col-lg-3 col-md-6">
+                            <div key={index} className="col-lg-3 col-md-6 mb-3">
                                 <div className="team-card-container">
-                                    <div className="team-card">
-                                        <div className="team-card-front">
+                                    <div className="team-card ">
+                                        <div className="team-card-front ">
                                             <img src={member.imageUrl} alt={member.name} className="team-member-image" />
-                                            <div className="team-card-title">
+                                            <div className="team-card-title theme-dark-color">
                                                 <h5 className="mb-0">{member.name}</h5>
                                                 <p className="text-primary small mb-0">{member.role}</p>
                                             </div>

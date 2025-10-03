@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Seo from "../../components/Seo"
 
 export default function AboutUsPage() {
     useEffect(() => {
@@ -10,22 +11,30 @@ export default function AboutUsPage() {
     }, []);
 
     return (
-        <div className="about-us-page">
-
+        <div className="about-us-page theme-color">
+            <Seo
+                title="About Us"
+                description={`Learn more about ${import.meta.env.VITE_SITE_NAME || " MF Engineering And Fabrication"}'s, our mission, values, and what drives us in engineering and fabrication.`}
+            />
             {/* Hero Section */}
             <section
-                className="hero-section text-white d-flex align-items-center justify-content-center"
+                className="text-white d-flex align-items-center justify-content-center text-center py-5"
                 style={{
                     minHeight: "50vh",
                     backgroundImage: "url('/img/herosection3.png')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
+                    position: "relative"
                 }}
                 data-aos="fade-in"
-            >
-                <div className="text-center p-4  bg-opacity-50 rounded">
-                    <h1 className="display-4 fw-bold">About Us</h1>
-                    <p className="lead">Passion. Innovation. Excellence.</p>
+            ><div style={{
+                position: "absolute",
+                top: 0, left: 0, right: 0, bottom: 0,
+                backgroundColor: "rgba(0, 0, 0, 0.7)", /* Dark overlay */
+            }}></div>
+                <div className="container" style={{ zIndex: 1 }}>
+                    <h1 className="display-4 fw-bold mb-3 animate__animated animate__fadeInDown">About Us</h1>
+                    <p className="lead mb-4 animate__animated animate__fadeInUp">Passion. Innovation. Excellence.</p>
                 </div>
             </section>
 
@@ -55,17 +64,17 @@ export default function AboutUsPage() {
             </section>
 
             {/* Team Section */}
-            <section className="bg-light py-5">
+            <section className=" py-5">
                 <div className="container">
                     <h2 className="fw-bold text-center mb-5" data-aos="fade-up">Meet Our Team</h2>
                     <div className="row g-4 justify-content-center">
                         {[
-                            { name: "DWARKESH LAJPAL", role: "Founder & Director", img: "/img/noImage.jpg" },
-                            { name: "FARUK MOHOMMAD", role: "Founder & Director", img: "/img/noImage.jpg" },
-                            { name: "PARMESH KUMAR", role: "Founder & Director", img: "/img/noImage.jpg" },
+                            { name: "DWARKESH LAJPAL", role: "Founder & Director", img: "/img/person2.jpg" },
+                            { name: "FARUK MOHOMMAD", role: "Founder & Director", img: "/img/person4.jpg" },
+                            { name: "PARMESH KUMAR", role: "Founder & Director", img: "/img/person5.jpg" },
                         ].map((member, idx) => (
-                            <div className="col-12 col-sm-6 col-md-4" key={idx} data-aos="zoom-in" data-aos-delay={idx * 200}>
-                                <div className="card shadow-sm text-center border-0 h-100">
+                            <div className="col-12 x col-sm-6 col-md-4" key={idx} data-aos="zoom-in" data-aos-delay={idx * 200}>
+                                <div className="card theme-dark-color shadow-sm text-center border-0 h-100">
                                     <img
                                         src={member.img}
                                         className="card-img-top rounded-circle mx-auto mt-3"
@@ -94,7 +103,7 @@ export default function AboutUsPage() {
                         { title: "Customer First", desc: "Prioritizing client satisfaction and support.", icon: "⭐" },
                     ].map((item, idx) => (
                         <div className="col-12 col-md-6 col-lg-3" key={idx} data-aos="flip-left" data-aos-delay={idx * 150}>
-                            <div className="card h-100 border-0 shadow-sm text-center p-4">
+                            <div className="card theme-dark-color h-100 border-0 shadow-sm text-center p-4">
                                 <div className="display-4 mb-3">{item.icon}</div>
                                 <h5 className="fw-bold">{item.title}</h5>
                                 <p className="text-muted">{item.desc}</p>

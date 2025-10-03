@@ -7,6 +7,8 @@ import { Navigation, Pagination } from "swiper/modules";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Seo from "../../components/Seo"
+
 
 //  Slugify helper
 function slugify(name) {
@@ -156,61 +158,16 @@ export default function ProductPage() {
     const nextProduct = products[(productIndex + 1) % products.length];
 
     return (
-        <div className="container my-5 p-5 p-md-5">
-            <main>
-                {/*  Mobile View as Card */}
-                <div className="card shadow-sm d-block d-md-none" data-aos="fade-up">
-                    {/* Image */}
-                    <Swiper
-                        modules={[Navigation, Pagination]}
-                        spaceBetween={10}
-                        slidesPerView={1}
-                        loop={true}
-                        navigation={true}
-                        pagination={{ clickable: true }}
-                        className="rounded-top custom-swiper"
-                    >
-                        {product.images.map((img, index) => (
-                            <SwiperSlide key={index}>
-                                <img
-                                    src={img}
-                                    onError={(e) => (e.target.src = "/img/noimage.jpg")}
-                                    alt={`${product.name} - ${index + 1}`}
-                                    className="img-fluid rounded-top"
-                                    style={{
-                                        width: "100%",
-                                        maxHeight: "300px",
-                                        objectFit: "contain",
-                                        backgroundColor: "#f9f9f9",
-                                    }}
-                                />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-
-                    {/* Card Body */}
-                    <div className="card-body text-center">
-                        <h2 className="card-title fw-bold" data-aos="fade-up">{product.name}</h2>
-                        <p className="card-text text-muted" data-aos="fade-up" data-aos-delay="200">{product.description}</p>
-                        <div className="d-grid gap-2 mt-3" data-aos="fade-up" data-aos-delay="400">
-                            <Link to="/contactus" className="btn btn-primary btn-lg">
-                                Enquire Now
-                            </Link>
-                            <a
-                                href="/assets/BestruckAutopartsLLP.pdf"
-                                target="_blank"
-                                className="btn btn-outline-secondary btn-lg"
-                            >
-                                Download Brochure
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                {/*  Desktop / Tablet View */}
-                <div className="row g-4 align-items-center d-none d-md-flex">
-                    {/* Image Slider */}
-                    <div className="col-md-6" data-aos="fade-right">
+        <div className="theme-color">
+            <div className="container mt-4 p-5 p-md-5">
+                <Seo
+                    title="Our Products"
+                    description={`Explore the innovative products and custom fabrication solutions offered by ${import.meta.env.VITE_SITE_NAME || " MF Engineering And Fabrication"}'s.`}
+                />
+                <main>
+                    {/*  Mobile View as Card */}
+                    <div className="card shadow-sm theme-dark-color p-2 d-block d-md-none" data-aos="fade-up">
+                        {/* Image */}
                         <Swiper
                             modules={[Navigation, Pagination]}
                             spaceBetween={10}
@@ -218,7 +175,7 @@ export default function ProductPage() {
                             loop={true}
                             navigation={true}
                             pagination={{ clickable: true }}
-                            className="rounded shadow-sm custom-swiper"
+                            className="rounded-top custom-swiper"
                         >
                             {product.images.map((img, index) => (
                                 <SwiperSlide key={index}>
@@ -226,59 +183,111 @@ export default function ProductPage() {
                                         src={img}
                                         onError={(e) => (e.target.src = "/img/noimage.jpg")}
                                         alt={`${product.name} - ${index + 1}`}
-                                        className="img-fluid rounded"
+                                        className="img-fluid rounded-top"
                                         style={{
                                             width: "100%",
-                                            maxHeight: "450px",
+                                            maxHeight: "300px",
                                             objectFit: "contain",
-                                            backgroundColor: "#f9f9f9",
+                                            backgroundColor: "#a38b70",
                                         }}
                                     />
                                 </SwiperSlide>
                             ))}
                         </Swiper>
-                    </div>
 
-                    {/* Product Info */}
-                    <div className="col-md-6" data-aos="fade-left">
-                        <h1 className="mb-3 display-5 fw-bold">{product.name}</h1>
-                        <p className="lead text-muted">{product.description}</p>
-                        <div className="mt-4">
-                            <Link to="/enquiry" className="btn btn-primary btn-lg me-2">
-                                Enquire Now
-                            </Link>
-                            <a
-                                href="/assets/BestruckAutopartsLLP.pdf"
-                                target="_blank"
-                                className="btn btn-outline-secondary btn-lg"
-                            >
-                                Download Brochure
-                            </a>
+                        {/* Card Body */}
+                        <div className="card-body theme-dark-color text-center">
+                            <h2 className="card-title fw-bold" data-aos="fade-up">{product.name}</h2>
+                            <p className="card-text text-muted text-justify" data-aos="fade-up" data-aos-delay="200">{product.description}</p>
+                            <div className="d-grid gap-2 mt-3" data-aos="fade-up" data-aos-delay="400">
+                                <Link to="/contactus" className="btn btn-primary btn-lg">
+                                    Enquire Now
+                                </Link>
+                                <a
+                                    href="/assets/BestruckAutopartsLLP.pdf"
+                                    target="_blank"
+                                    className="btn btn-outline-secondary btn-lg"
+                                >
+                                    Download Brochure
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                {/*  Previous / Next Links (Common for all) */}
-                <div className="row mt-5 g-4 align-items-center text-center text-md-start">
-                    <div className="col-12 col-md-6 d-flex justify-content-md-start justify-content-center" data-aos="fade-right">
-                        <Link
-                            to={`/product/${previousProduct.slug}`}
-                            className="btn btn-outline-primary btn-lg w-100 w-md-auto px-4 py-2 mb-2 shadow-sm rounded-pill"
-                        >
-                            &larr; {previousProduct.name}
-                        </Link>
+                    {/*  Desktop / Tablet View */}
+                    <div className="row g-4 theme-color align-items-center d-none d-md-flex">
+                        {/* Image Slider */}
+                        <div className="col-md-6" data-aos="fade-right">
+                            <Swiper
+                                modules={[Navigation, Pagination]}
+                                spaceBetween={10}
+                                slidesPerView={1}
+                                loop={true}
+                                navigation={true}
+                                pagination={{ clickable: true }}
+                                className="rounded shadow-sm custom-swiper"
+                            >
+                                {product.images.map((img, index) => (
+                                    <SwiperSlide key={index}>
+                                        <img
+                                            src={img}
+                                            onError={(e) => (e.target.src = "/img/noimage.jpg")}
+                                            alt={`${product.name} - ${index + 1}`}
+                                            className="img-fluid rounded"
+                                            style={{
+                                                width: "100%",
+                                                maxHeight: "450px",
+                                                objectFit: "contain",
+                                                backgroundColor: "#eae0d5",
+                                            }}
+                                        />
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </div>
+
+                        {/* Product Info */}
+                        <div className="col-md-6" data-aos="fade-left">
+                            <h1 className="mb-3 display-5 fw-bold">{product.name}</h1>
+                            <p className="lead text-muted text-justify">{product.description}</p>
+                            <div className="mt-4">
+                                <Link to="/enquiry" className="btn btn-outline-primary btn-lg me-2">
+                                    Enquire Now
+                                </Link>
+                                <a
+                                    href="/assets/BestruckAutopartsLLP.pdf"
+                                    target="_blank"
+                                    className="btn btn-outline-secondary btn-lg"
+                                >
+                                    Download Brochure
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="col-12 col-md-6 d-flex justify-content-md-end justify-content-center" data-aos="fade-left">
-                        <Link
-                            to={`/product/${nextProduct.slug}`}
-                            className="btn btn-outline-primary btn-lg w-100 w-md-auto px-4 py-2 shadow-sm rounded-pill"
-                        >
-                            {nextProduct.name} &rarr;
-                        </Link>
+                    {/*  Previous / Next Links (Common for all) */}
+                    <div className="row mt-5 g-4 align-items-center text-center text-md-start">
+                        <div className="col-12 col-md-6 d-flex justify-content-md-start justify-content-center" data-aos="fade-right">
+                            <Link
+                                to={`/product/${previousProduct.slug}`}
+                                className="btn btn-outline-primary btn-lg w-100 w-md-auto px-4 py-2 mb-2 shadow-sm rounded-pill"
+                            >
+                                &larr; {previousProduct.name}
+                            </Link>
+                        </div>
+
+                        <div className="col-12 col-md-6 d-flex justify-content-md-end justify-content-center" data-aos="fade-left">
+                            <Link
+                                to={`/product/${nextProduct.slug}`}
+                                className="btn btn-outline-primary btn-lg w-100 w-md-auto px-4 py-2 shadow-sm rounded-pill"
+                            >
+                                {nextProduct.name} &rarr;
+                            </Link>
+                        </div>
                     </div>
-                </div>
-            </main>
+                </main>
+            </div>
         </div>
+
     );
 }

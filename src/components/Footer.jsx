@@ -45,9 +45,9 @@ export default function Footer() {
             .replace(/[^a-z0-9]/g, ""); // extra chars remove
 
     return (
-        <footer>
-            <div className="container small border-top">
-                <div className="row py-2 d-flex justify-content-between">
+        <footer className="bg-dark theme-text-color py-4 shadow-lg border-top border-light border-5">
+            <div className="container small">
+                <div className="row p-2 d-flex justify-content-between">
 
                     {/* Company Info */}
                     <div className="col-12 col-lg-6 col-xl-3 border-end p-5">
@@ -60,19 +60,19 @@ export default function Footer() {
                                     8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zM8 
                                     9.433 1.562 6 8 2.567 14.438 6 8 9.433z" />
                             </svg> */}
-                            <h4>{siteName?.split(" ").slice(0, 2).join(" ")}</h4>
+                            <h4 className="rouge-script-regular">{siteName?.split(" ").slice(0, 2).join(" ")}</h4>
                         </div>
 
-                        <address className="text-secondary mt-3 fs-5">{siteAddress}</address>
+                        <address className="text-light mt-3 fs-5">{siteAddress}</address>
 
                         {/* Email */}
-                        <Link to={`mailto:${siteEmail}`} className="nav-link link-secondary ps-0 mt-3 fs-6">
+                        <Link to={`mailto:${siteEmail}`} className="nav-link link-light ps-0 mt-3 fs-6">
                             <FiMail className="me-2" /> {siteEmail}
                         </Link>
 
                         {/* Phones */}
                         {phones.map((phone, i) => (
-                            <Link key={i} to={`tel:${phone}`} className="nav-link link-secondary ps-0 mt-3 fs-6">
+                            <Link key={i} to={`tel:${phone}`} className="nav-link link-light ps-0 mt-3 fs-6">
                                 <FiPhone className="me-2" /> {phone}
                             </Link>
                         ))}
@@ -83,8 +83,8 @@ export default function Footer() {
                         <h3 className="h6 mb-3">Company</h3>
                         <ul className="nav flex-column">
                             {companyLinks.map((link, i) => (
-                                <li key={i} className="nav-item link-dark pb-1 link-fancy me-2">
-                                    <Link className="nav-link link-secondary ps-0" to={`/${link.to}`}>
+                                <li key={i} className="nav-item link-light pb-1 link-fancy me-2">
+                                    <Link className="nav-link link-light ps-0" to={`/${link.to}`}>
                                         {link.label}
                                     </Link>
                                 </li>
@@ -97,8 +97,8 @@ export default function Footer() {
                         <h3 className="h6 mb-3">Products</h3>
                         <ul className="nav flex-column">
                             {products.map((product, i) => (
-                                <li key={i} className="nav-item link-dark pb-1 link-fancy me-2">
-                                    <Link className="nav-link link-secondary ps-0" to={`product/${slugify(product)}`}>
+                                <li key={i} className="nav-item link-light pb-1 link-fancy me-2">
+                                    <Link className="nav-link link-light ps-0" to={`product/${slugify(product)}`}>
                                         {product}
                                     </Link>
                                 </li>
@@ -112,8 +112,8 @@ export default function Footer() {
                         <h3 className="h6 mb-3">Quick Links</h3>
                         <ul className="nav flex-column">
                             {subpages.map((page, i) => (
-                                <li key={i} className="nav-item link-dark pb-1 link-fancy me-2">
-                                    <Link className="nav-link link-secondary ps-0" to={`/${page.href}`}>{page.label}</Link>
+                                <li key={i} className="nav-item link-light pb-1 link-fancy me-2">
+                                    <Link className="nav-link link-light ps-0" to={`/${page.href}`}>{page.label}</Link>
                                 </li>
                             ))}
                         </ul>
@@ -146,7 +146,7 @@ export default function Footer() {
                 </div>
                 <div className="container text-center py-3 small">
                     Developed by{" "}
-                    <a href="https://shubhambhartiportfolio.netlify.app/" className="link-fancy" target="_blank" rel="noreferrer">
+                    <a href="https://shubhambhartiportfolio.netlify.app/" className="link-fancy theme-text-color" target="_blank" rel="noreferrer">
                         Shubham Bharti
                     </a>
                 </div>

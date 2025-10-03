@@ -1,9 +1,13 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import Seo from "../components/Seo"
 
 export default function ErrorPage() {
     return (
         <div className="container-fluid d-flex align-items-center justify-content-center min-vh-100 mt-5">
+            <Seo
+                title="Page Not Found"
+                description={`The page you are looking for on ${import.meta.env.VITE_SITE_NAME || " MF Engineering And Fabrication"}'s could not be found.`}
+            />
             <main className="text-start">
                 <h1>404</h1>
                 <h1 className="display-1 fw-bold">Uuuups, something is broken...</h1>

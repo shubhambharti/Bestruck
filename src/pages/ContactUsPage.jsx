@@ -1,173 +1,113 @@
+// src/components/ContactUsPage.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import { FiPhone, FiMail, FiSend, FiMapPin } from "react-icons/fi";
+import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import Seo from "../components/Seo"
+
+import ContactForm from '../components/ContactForm'; // IMPORT THE NEW REUSABLE FORM COMPONENT
 
 export default function ContactUsPage() {
-    const siteAddress = import.meta.env.VITE_SITE_ADDRESS;
-    const siteEmail = import.meta.env.VITE_SITE_EMAIL;
+    const siteAddress = import.meta.env.VITE_SITE_ADDRESS || "123 Main Street, City, State, Country";
+    const siteEmail = import.meta.env.VITE_SITE_EMAIL || "info@example.com";
     const phones = [
         import.meta.env.VITE_SITE_PHONE1,
         import.meta.env.VITE_SITE_PHONE2,
         import.meta.env.VITE_SITE_PHONE3,
     ].filter(Boolean);
+
+    // Optional: Define a success handler specific to the contact page if needed
+    const handleContactSuccess = (data) => {
+        console.log("Contact form submitted successfully on Contact Us Page:", data);
+        // Maybe redirect or show a specific thank you message here
+    };
+
     return (
-        <div>
+        <div className="contact-us-page theme-color">
+            <Seo
+                title="Contact Us"
+                description={`Reach out to ${import.meta.env.VITE_SITE_NAME || " MF Engineering And Fabrication"}'s for inquiries, support, or partnership opportunities. Find our contact details and send us a message.`}
+            />
+
             {/* Hero Section */}
             <section
-                className="text-white d-flex align-items-center justify-content-center"
+                className="text-white d-flex align-items-center justify-content-center text-center py-5"
                 style={{
-                    minHeight: "40vh",
+                    minHeight: "50vh",
                     backgroundImage: "url('/img/herosection3.png')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
-                    position: "relative",
+                    position: "relative"
                 }}
+                data-aos="fade-in"
             >
-                <div
-                    className="text-center p-4"
-                >
-                    <h1 className="display-4 fw-bold">Get in Touch</h1>
-                    <p className="lead">We’d love to hear from you. Let’s connect!</p>
+                <div style={{
+                    position: "absolute",
+                    top: 0, left: 0, right: 0, bottom: 0,
+                    backgroundColor: "rgba(0, 0, 0, 0.7)", /* Dark overlay */
+                }}>
+                </div>
+                <div className="container" style={{ zIndex: 1 }}>
+                    <h1 className="display-4 fw-bold mb-3 animate__animated animate__fadeInDown">Get in Touch</h1>
+                    <p className="lead mb-4 animate__animated animate__fadeInUp">e’d love to hear from you. Let’s connect!</p>
                 </div>
             </section>
 
-            {/* Contact Form Section */}
-            <div className="container my-5">
-                <div className="row g-4 align-items-center">
-                    {/* Form */}
-                    <div className="col-lg-7">
-                        <div
-                            className="card shadow-lg border-0 p-4 my-4"
-                            style={{
-                                background: "rgba(255,255,255,0.9)",
-                                borderRadius: "16px",
-                            }}
-                        >
-                            <h2 className="fw-bold theme-text-color my-4 text-center">
-                                Send Us a Message
-                            </h2>
-                            <form className="row g-3 my-5 py-2 needs-validation" noValidate>
-                                {/* Full Name */}
-                                <div className="col-md-6">
-                                    <div className="form-floating-group">
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="name"
-                                            placeholder=" " /* Use a space for consistent behavior */
-                                            required
-                                        />
-                                        <label htmlFor="name" className="form-label">Full Name</label>
-                                    </div>
-                                </div>
-
-                                {/* Email */}
-                                <div className="col-md-6">
-                                    <div className="form-floating-group">
-                                        <input
-                                            type="email"
-                                            className="form-control"
-                                            id="email"
-                                            placeholder=" " /* Use a space for consistent behavior */
-                                            required
-                                        />
-                                        <label htmlFor="email" className="form-label">Email</label>
-                                    </div>
-                                </div>
-
-                                {/* Phone */}
-                                <div className="col-md-6">
-                                    <div className="form-floating-group">
-                                        <input
-                                            type="tel"
-                                            className="form-control"
-                                            id="phone"
-                                            placeholder=" " /* Use a space for consistent behavior */
-                                        />
-                                        <label htmlFor="phone" className="form-label">Phone</label>
-                                    </div>
-                                </div>
-
-                                {/* Subject */}
-                                <div className="col-md-6">
-                                    <div className="form-floating-group">
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="subject"
-                                            placeholder=" " /* Use a space for consistent behavior */
-                                            required
-                                        />
-                                        <label htmlFor="subject" className="form-label">Subject</label>
-                                    </div>
-                                </div>
-
-                                {/* Message */}
-                                <div className="col-12">
-                                    <div className="form-floating-group">
-                                        <textarea
-                                            className="form-control"
-                                            id="message"
-                                            rows="5"
-                                            placeholder=" " /* A space here is crucial for the CSS selector */
-                                            required
-                                        ></textarea>
-                                        <label htmlFor="message" className="form-label">Message</label>
-                                    </div>
-                                </div>
-
-                                {/* Submit Button remains the same */}
-                                <div className="col-12 text-center mt-3">
-                                    <button className="btn btn-submit" type="submit">
-                                        Send Message
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+            {/* Contact Form & Info Section */}
+            <div className="container mt-5 py-3">
+                <div className="row g-4 justify-content-center">
+                    {/* Form Component */}
+                    <div className="col-lg-7 mb-3">
+                        <ContactForm
+                            formTitle="Send Us a Message"
+                            submitButtonText="Send Message"
+                        />
                     </div>
 
-                    {/* Contact Info */}
-                    <div className="col-lg-5">
-                        <div className="contact-info-card h-100">
-                            <h4 className="fw-bold text-center my-4">Contact Info</h4>
+                    {/* Contact Info (remains mostly the same) */}
+                    <div className="col-lg-5 mb-3">
+                        <div className="contact-info-card card h-100 shadow-lg border-0 p-4"
+                            style={{ background: "rgba(255,255,255,0.95)", borderRadius: "16px" }}>
+                            <h4 className="fw-bold text-center mb-4">Our Details</h4>
 
                             {/* Address */}
-                            <div className="contact-item">
-                                <div className="icon-circle">
-                                    {/* Assuming you use a location icon, e.g., from react-icons/fi */}
+                            <div className="contact-item d-flex align-items-start mb-3">
+                                <div className="icon-circle me-3">
                                     <FiMapPin />
                                 </div>
-                                <address>{siteAddress}</address>
+                                <address className="mb-0 flex-grow-1">{siteAddress}</address>
                             </div>
 
                             {/* Email */}
-                            <div className="contact-item">
-                                <div className="icon-circle">
+                            <div className="contact-item d-flex align-items-center mb-3">
+                                <div className="icon-circle me-3">
                                     <FiMail />
                                 </div>
-                                <Link to={`mailto:${siteEmail}`}>{siteEmail}</Link>
+                                <Link to={`mailto:${siteEmail}`} className="text-decoration-none text-dark">{siteEmail}</Link>
                             </div>
 
                             {/* Phones */}
                             {phones.map((phone, i) => (
-                                <div key={i} className="contact-item">
-                                    <div className="icon-circle">
+                                <div key={i} className="contact-item d-flex align-items-center mb-3">
+                                    <div className="icon-circle me-3">
                                         <FiPhone />
                                     </div>
-                                    <Link to={`tel:${phone}`}>{phone}</Link>
+                                    <Link to={`tel:${phone}`} className="text-decoration-none text-dark">{phone}</Link>
                                 </div>
                             ))}
 
                             {/* Google Maps Iframe */}
-                            <iframe
-                                title="map"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1778.7959363523548!2d81.06037337431903!3d26.916444822989327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399959569f87619b%3A0x7148a0c8b1765421!2sM.F%20ENGGENRING%20AND%20FABRICATION!5e0!3m2!1sen!2sin!4v1759225694917!5m2!1sen!2sin"
-                                width="100%"
-                                height="250"
-                                className="contact-map"
-                                allowFullScreen=""
-                                loading="lazy"
-                            ></iframe>
+                            <div className="map-container mt-4">
+                                <iframe
+                                    title="map"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15222.18663806742!2d78.37341858972168!3d17.48425268019623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbef2829283f51%3A0x6a0f3b0c6a5a0d!2sHitech%20City!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                                    width="100%"
+                                    height="250"
+                                    className="contact-map border-0 rounded-3"
+                                    allowFullScreen=""
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                ></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>

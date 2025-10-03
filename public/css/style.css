@@ -13,7 +13,14 @@
   display: none;
 }
 .theme-text-color {
-  color: rgb(173, 70, 39);
+  color: rgb(173, 70, 39) !important;
+}
+
+.theme-color {
+  background-color: #eae0d5;
+}
+.theme-dark-color {
+  background-color: #a38b70;
 }
 /* =================================================================
    Professional Dropdown Styling
@@ -277,6 +284,9 @@ body {
   background-color: #f8f9fa;
   padding-top: 70px;
 }
+.text-justify {
+  text-align: justify !important;
+}
 
 /* TIMELINE BASE */
 .main-timeline {
@@ -458,50 +468,192 @@ body {
 /* --- Floating Label Group --- */
 .form-floating-group {
   position: relative;
-  margin-bottom: 1.5rem; /* Adds space between fields */
+  margin-bottom: 1.5rem;
 }
 
-/* --- Input & Textarea Styling --- */
-.form-floating-group .form-control {
+/* Input, textarea, select */
+.form-floating-group .form-control,
+.form-floating-group .form-select {
   border: none;
-  border-bottom: 2px solid #ced4da; /* Underline */
-  border-radius: 10px; /* Remove rounded corners for a sharp look */
-  padding: 10px 10px; /* Adjust padding for better text alignment */
+  border-bottom: 2px solid #ced4da;
+  border-radius: 10px;
+  padding: 10px 12px;
   background-color: transparent;
   font-weight: 500;
   box-shadow: 0 2px rgba(173, 70, 39, 0.123);
+  width: 100%;
+  appearance: none;
 }
 
-/* Remove the default glowing outline on focus */
-.form-floating-group .form-control:focus {
+/* Focus state */
+.form-floating-group .form-control:focus,
+.form-floating-group .form-select:focus {
   outline: none;
   box-shadow: none;
-  border-color: rgb(173, 70, 39); /* Highlight color on focus */
+  border-color: rgb(173, 70, 39);
 }
 
-/* --- Label Styling --- */
+/* Floating labels */
 .form-floating-group .form-label {
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 12px;
   font-weight: 500;
   color: #6c757d;
-  pointer-events: none; /* Allows clicking "through" the label to the input */
+  pointer-events: none;
   transition: all 0.2s ease-in-out;
-}
-
-/* --- The Magic: Floating Label Animation --- */
-/* This rule applies when the input is focused OR when it's not empty */
-.form-floating-group .form-control:focus + .form-label,
-.form-floating-group .form-control:not(:placeholder-shown) + .form-label {
-  transform: translateY(-24px) scale(0.85);
-  color: rgb(173, 70, 39); /* Match the focus border color */
-  background-color: white; /* Add background to cut through the line */
+  background: white;
   padding: 0 5px;
-  left: -2px; /* Slight adjustment for padding */
+}
+/* "No file chosen" text ko hide karne ke liye jab koi file select na ho */
+.form-control.file-input:invalid {
+  color: transparent;
 }
 
-/* Specific styling for the textarea */
+/* File select hone ke baad file name ko show karne ke liye */
+.form-control.file-input:valid {
+  color: #212529; /* Aapke form ki default text color daalein */
+}
+/* Float input/textarea */
+/* .form-floating-group .form-control:focus + .form-label,
+.form-floating-group .form-control:not(:placeholder-shown) + .form-label,
+.form-floating-group .form-select:focus + .form-label,
+.form-floating-group .form-select:valid + .form-label,
+.form-floating-group .file-input:valid + .form-label,
+.form-floating-group .file-input:focus + .form-label {
+  transform: translateY(-24px) scale(0.85);
+  color: rgb(173, 70, 39);
+  left: 5px;
+} */
+/* Float input/textarea (YEH SAHI CODE HAI) */
+.form-floating-group .form-control:focus + .form-label,
+.form-floating-group .form-control:not([type="file"]):not(:placeholder-shown) + .form-label, /* <--- FIX HO GAYA */
+.form-floating-group .form-select:focus + .form-label,
+.form-floating-group .form-select:valid + .form-label,
+.form-floating-group .file-input:valid + .form-label,
+.form-floating-group .file-input:focus + .form-label {
+  transform: translateY(-24px) scale(0.85);
+  color: rgb(173, 70, 39);
+  left: 5px;
+}
+
+/* File input */
+.file-input::-webkit-file-upload-button {
+  display: none;
+}
+
+/* Optional: custom arrow for select */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: "▾";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6c757d;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.select-input:focus ~ .form-label,
+.select-wrapper:focus-within::after {
+  color: rgb(173, 70, 39);
+}
+
+/* Wrapper for floating label */
+.custom-dropdown-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+/* Floating label */
+.custom-dropdown-wrapper .form-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-weight: 500;
+  color: #6c757d;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+  background: white;
+  padding: 0 5px;
+}
+.custom-dropdown-wrapper .form-label.floated {
+  transform: translateY(-24px) scale(0.85);
+  color: rgb(173, 70, 39);
+  left: 5px;
+}
+
+/* Dropdown box */
+.custom-dropdown {
+  border: none;
+  border-bottom: 2px solid #ced4da;
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  background: transparent;
+  position: relative;
+}
+
+/* Selected value */
+.custom-dropdown .selected-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6c757d;
+}
+.custom-dropdown .selected-value.filled {
+  color: #333;
+}
+
+/* Arrow */
+.custom-dropdown .arrow {
+  transition: transform 0.2s;
+}
+.custom-dropdown .arrow.up {
+  transform: rotate(180deg);
+}
+
+/* Options list */
+.custom-dropdown .options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%; /* Make options match the container width */
+  box-sizing: border-box; /* Include padding/border in width */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 4px;
+  max-height: 200px;
+  overflow-y: auto; /* vertical scroll if needed */
+  overflow-x: hidden; /* prevent horizontal scrollbar */
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+}
+
+/* Individual option */
+.custom-dropdown .options li {
+  padding: 10px;
+  transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+/* Hover / focus effect */
+.custom-dropdown .options li:hover {
+  background-color: #eae0d5;
+  color: #1a1a1a;
+  transform: translateX(2px);
+  font-weight: bold;
+}
+
+/* Textarea specific */
 #message {
   resize: none;
   min-height: 120px;
@@ -533,7 +685,6 @@ body {
 
 /* Main card styling */
 .contact-info-card {
-  background-color: #f8f9fa; /* bg-light */
   border-radius: 1rem; /* rounded-4 */
   padding: 0 2rem; /* p-4 equivalent with more space */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -602,14 +753,6 @@ body {
    People Page & Unique Team Card Styling
    ================================================================= */
 
-.people-page {
-  background-color: #f8f9fa; /* Light background for the page */
-}
-
-.people-hero {
-  background-color: #ffffff;
-}
-
 /* --- The 3D Card Effect --- */
 .team-card-container {
   perspective: 1000px; /* This creates the 3D space */
@@ -642,7 +785,7 @@ body {
 }
 
 .team-card-front {
-  background-color: #ffffff;
+  background-color: #a38b70;
 }
 
 .team-card-back {
@@ -657,7 +800,7 @@ body {
 .team-member-image {
   width: 100%;
   height: 80%;
-  object-fit: cover;
+  object-fit: fill;
   object-position: top; /* Ensures faces are not cut off */
 }
 
@@ -695,5 +838,91 @@ body {
 @media (max-width: 767.98px) {
   .team-card {
     height: 360px; /* Slightly adjust height for mobile */
+  }
+}
+
+/* src/index.css or src/App.css */
+
+/* Custom styling for theme text color if not already defined */
+.theme-text-color {
+  color: #007bff; /* Bootstrap primary blue, adjust to your theme */
+}
+
+.mission-section,
+.vision-section,
+.cta-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Simple animation for cards, assuming you're using animate.css or similar */
+/* If you're not using animate.css, these won't do anything unless you define them */
+/* You would need to install animate.css: npm install animate.css --save */
+/* And import it in your main App.js or index.js: import 'animate.css'; */
+
+.animate__animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animate__fadeInDown {
+  animation-name: fadeInDown;
+}
+.animate__fadeInUp {
+  animation-name: fadeInUp;
+}
+.animate__fadeInLeft {
+  animation-name: fadeInLeft;
+}
+.animate__fadeInRight {
+  animation-name: fadeInRight;
+}
+
+/* Custom animation delay for staggered effects */
+.animation-delay-1 {
+  animation-delay: 0.3s;
+}
+.animation-delay-2 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-20px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(20px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }

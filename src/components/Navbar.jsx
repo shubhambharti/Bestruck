@@ -76,12 +76,12 @@ export default function Navbar() {
     return (
         <nav
             id="navScroll"
-            className={`navbar navbar-expand-lg pb-1 navbar-light fixed-top ${isScrolled ? "scrolled shadow-sm bg-white" : "bg-light"
+            className={`navbar navbar-expand-lg pb-1 theme-color fixed-top ${isScrolled ? "shadow-sm" : ""
                 }`}
         >
             <div className="container">
-                {/* Brand */}
-                <a className="navbar-brand pe-4 fs-4" href="/">
+                {/* Brand - Always text-dark */}
+                <a className="navbar-brand pe-4 fs-4 text-dark" href="/">
                     <span className="ms-1 rouge-script-regular fw-bolder">
                         {import.meta.env.VITE_SITE_NAME?.split(" ")[0]}
                     </span>
@@ -108,7 +108,8 @@ export default function Navbar() {
                 >
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         {/* Company Dropdown */}
-                        <li className="nav-item link-dark pb-2 link-fancy dropdown">
+                        <li className="nav-item link-dark link-fancy pb-2 dropdown">
+                            {/* Always text-dark */}
                             <a
                                 className="nav-link dropdown-toggle"
                                 href="#"
@@ -129,7 +130,8 @@ export default function Navbar() {
                         </li>
 
                         {/* Products Dropdown */}
-                        <li className="nav-item link-dark link-fancy dropdown mx-2">
+                        <li className="nav-item link-dark link-fancy dropdown mx-lg-2">
+                            {/* Always text-dark */}
                             <a
                                 className="nav-link dropdown-toggle"
                                 href="#"
@@ -155,7 +157,8 @@ export default function Navbar() {
                             { to: "/career", label: "Career" },
                             { to: "/contactus", label: "Contact Us" },
                         ].map((l, i) => (
-                            <li key={i} className="nav-item link-dark link-fancy mx-2">
+                            <li key={i} className="nav-item link-dark link-fancy mx-lg-2">
+                                {/* Always text-dark */}
                                 <Link className="nav-link" to={l.to}>
                                     {l.label}
                                 </Link>
@@ -168,7 +171,7 @@ export default function Navbar() {
                         href="/assets/BestruckAutopartsLLP.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn btn-outline-dark ms-lg-3"
+                        className="nav-item link-dark link-fancy ms-lg-3"
                     >
                         Download Brochure
                     </a>
