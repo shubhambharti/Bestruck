@@ -97,9 +97,9 @@ export default function PeoplePage() {
                                                 <p className="text-primary small">{member.role}</p>
                                                 <p className="small mb-3">{member.bio}</p>
                                                 <div className="social-links">
-                                                    {member.social.linkedin && <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>}
-                                                    {member.social.twitter && <a href={member.social.twitter} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>}
-                                                    {member.social.email && <a href={member.social.email}><FaEnvelope /></a>}
+                                                    {member.social.linkedin && <a className='theme-text-color' href={member.social.linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>}
+                                                    {member.social.twitter && <a className='theme-text-color' href={member.social.twitter} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>}
+                                                    {member.social.email && <a className='theme-text-color' href={member.social.email}><FaEnvelope /></a>}
                                                 </div>
                                             </div>
                                         </div>

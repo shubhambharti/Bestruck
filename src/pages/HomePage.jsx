@@ -20,7 +20,7 @@ export default function HomePage() {
                         <div className="col-lg-7 py-vh-6 position-relative" data-aos="fade-right">
                             <h1 className="display-1 fw-bold mt-5">Building the Future of Auto Parts!</h1>
                             <p className="lead">Reliable toolings, fixtures, and sheet metal solutions for the automotive industry.</p>
-                            <Link to="/aboutus" className="btn btn-outline-primary btn-xl shadow me-3 rounded-5 fw-bold my-5">Who We Are?</Link>
+                            <Link to="/aboutus" className="btn btn-theme-dark-color btn-xl shadow me-3 rounded-5 fw-bold my-5">Who We Are?</Link>
                         </div>
                     </div>
                 </div>

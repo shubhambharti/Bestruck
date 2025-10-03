@@ -22,6 +22,13 @@
 .theme-dark-color {
   background-color: #a38b70;
 }
+.btn-theme-dark-color {
+  background-color: #eae0d5;
+}
+.btn-theme-dark-color:hover {
+  background-color: #a38b70;
+  border: 2px solid #a17c52;
+}
 /* =================================================================
    Professional Dropdown Styling
    ================================================================= */

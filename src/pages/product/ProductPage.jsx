@@ -251,13 +251,13 @@ export default function ProductPage() {
                             <h1 className="mb-3 display-5 fw-bold">{product.name}</h1>
                             <p className="lead text-muted text-justify">{product.description}</p>
                             <div className="mt-4">
-                                <Link to="/enquiry" className="btn btn-outline-primary btn-lg me-2">
+                                <Link to="/enquiry" className="btn btn-outline-primary btn-theme-dark-color btn-lg me-2">
                                     Enquire Now
                                 </Link>
                                 <a
                                     href="/assets/BestruckAutopartsLLP.pdf"
                                     target="_blank"
-                                    className="btn btn-outline-secondary btn-lg"
+                                    className="btn btn-theme-dark-color btn-lg"
                                 >
                                     Download Brochure
                                 </a>

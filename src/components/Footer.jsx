@@ -45,7 +45,7 @@ export default function Footer() {
             .replace(/[^a-z0-9]/g, ""); // extra chars remove
 
     return (
-        <footer className="bg-dark theme-text-color py-4 shadow-lg border-top border-light border-5">
+        <footer className="bg-dark theme-text-color py-4 shadow-lg border-top border-light border-5" style={{ borderRadius: "20px 20px 0 0" }}>
             <div className="container small">
                 <div className="row p-2 d-flex justify-content-between">
 

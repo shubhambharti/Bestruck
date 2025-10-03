@@ -201,7 +201,7 @@ export default function ContactForm({
 
                 {/* --- Submit Button (Common to both) --- */}
                 <div className="col-12 text-center mt-4">
-                    <button className="btn btn-primary btn-lg px-5" type="submit">
+                    <button className="btn btn-theme-dark-color btn-lg px-5" type="submit">
                         <FiSend className="me-2" /> {submitButtonText || "Send Message"}
                     </button>
                 </div>

@@ -41,11 +41,12 @@ export default function AboutUsPage() {
             {/* Company Story */}
             <section className="container my-5">
                 <div className="row align-items-center g-4">
-                    <div className="col-md-6" data-aos="fade-right">
+                    <div className="col-md-6" data-aos="fade-right" >
                         <img
                             src="/img/about.png"
                             alt="Company Story"
-                            className="img-fluid rounded shadow-sm"
+                            className="img-fluid "
+                            style={{ borderRadius: "20px" }}
                         />
                     </div>
                     <div className="col-md-6" data-aos="fade-left">
@@ -73,8 +74,8 @@ export default function AboutUsPage() {
                             { name: "FARUK MOHOMMAD", role: "Founder & Director", img: "/img/person4.jpg" },
                             { name: "PARMESH KUMAR", role: "Founder & Director", img: "/img/person5.jpg" },
                         ].map((member, idx) => (
-                            <div className="col-12 x col-sm-6 col-md-4" key={idx} data-aos="zoom-in" data-aos-delay={idx * 200}>
-                                <div className="card theme-dark-color shadow-sm text-center border-0 h-100">
+                            <div className="col-12 x col-sm-6 col-md-4 mb-3" key={idx} data-aos="zoom-in" data-aos-delay={idx * 200}>
+                                <div className="card theme-dark-color shadow-sm text-center border-0 h-100" style={{ borderRadius: "20px" }}>
                                     <img
                                         src={member.img}
                                         className="card-img-top rounded-circle mx-auto mt-3"
@@ -102,8 +103,8 @@ export default function AboutUsPage() {
                         { title: "Integrity", desc: "Honesty and transparency in every aspect of our work.", icon: "🤝" },
                         { title: "Customer First", desc: "Prioritizing client satisfaction and support.", icon: "⭐" },
                     ].map((item, idx) => (
-                        <div className="col-12 col-md-6 col-lg-3" key={idx} data-aos="flip-left" data-aos-delay={idx * 150}>
-                            <div className="card theme-dark-color h-100 border-0 shadow-sm text-center p-4">
+                        <div className="col-12 col-md-6 col-lg-3 mb-3" key={idx} data-aos="flip-left" data-aos-delay={idx * 150}>
+                            <div className="card theme-dark-color h-100 border-0 shadow-sm text-center p-4" style={{ borderRadius: "20px" }}>
                                 <div className="display-4 mb-3">{item.icon}</div>
                                 <h5 className="fw-bold">{item.title}</h5>
                                 <p className="text-muted">{item.desc}</p>
@@ -114,7 +115,7 @@ export default function AboutUsPage() {
             </section>
 
             {/* Call to Action */}
-            <section className="text-center py-5 bg-primary text-white rounded" data-aos="zoom-in">
+            <section className="text-center py-5 bg-primary text-white" style={{ borderRadius: "20px 20px 0 0" }} data-aos="zoom-in">
                 <h3 className="fw-bold mb-3">Ready to Get Started?</h3>
                 <p className="mb-4">Join us and experience excellence in every product we deliver.</p>
                 <Link to="/contact" className="btn btn-light btn-lg">
