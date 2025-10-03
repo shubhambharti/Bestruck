@@ -189,6 +189,7 @@ export default function ProductPage() {
                                             maxHeight: "300px",
                                             objectFit: "contain",
                                             backgroundColor: "#a38b70",
+                                            borderRadius: "20px"
                                         }}
                                     />
                                 </SwiperSlide>
@@ -239,6 +240,7 @@ export default function ProductPage() {
                                                 maxHeight: "450px",
                                                 objectFit: "contain",
                                                 backgroundColor: "#eae0d5",
+                                                borderRadius: "20px"
                                             }}
                                         />
                                     </SwiperSlide>
