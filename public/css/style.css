@@ -597,3 +597,103 @@ body {
   margin-top: 1rem; /* Add some space above the map */
   filter: grayscale(20%); /* Optional: for a stylized map look */
 }
+
+/* =================================================================
+   People Page & Unique Team Card Styling
+   ================================================================= */
+
+.people-page {
+  background-color: #f8f9fa; /* Light background for the page */
+}
+
+.people-hero {
+  background-color: #ffffff;
+}
+
+/* --- The 3D Card Effect --- */
+.team-card-container {
+  perspective: 1000px; /* This creates the 3D space */
+}
+
+.team-card {
+  width: 100%;
+  height: 380px; /* Fixed height for consistency */
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-card-container:hover .team-card {
+  transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+.team-card-front,
+.team-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the back of the card when facing away */
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.team-card-front {
+  background-color: #ffffff;
+}
+
+.team-card-back {
+  background-color: #212529; /* Dark background for the back */
+  color: #ffffff;
+  transform: rotateY(180deg); /* Start with the back flipped */
+  padding: 1.5rem;
+  justify-content: center;
+}
+
+/* --- Card Content Styling --- */
+.team-member-image {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  object-position: top; /* Ensures faces are not cut off */
+}
+
+.team-card-title {
+  padding: 1.25rem;
+  text-align: center;
+  background-color: #fff;
+  height: 20%;
+}
+
+.team-card-back-content {
+  text-align: center;
+}
+
+/* --- Social Links --- */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: #ffffff;
+  font-size: 1.25rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+  color: #0d6efd; /* Bootstrap primary color */
+  transform: scale(1.2);
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 767.98px) {
+  .team-card {
+    height: 360px; /* Slightly adjust height for mobile */
+  }
+}

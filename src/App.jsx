@@ -10,6 +10,7 @@ import AboutUsPage from "./pages/company/AboutUsPage";
 import HistoryPage from "./pages/company/HistoryPage";
 import ScrollToTop from "./components/ScrollToTop";
 import ContactUsPage from "./pages/ContactUsPage";
+import PeoplePage from "./pages/PeoplePage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<AboutUsPage />} />
         <Route path="/history" element={<HistoryPage />} />
+        <Route path="/people" element={<PeoplePage />} />
 
         <Route path="/product/:slug" element={<ProductPage />} />
         <Route path="/contactus" element={<ContactUsPage />} />
