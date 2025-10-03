@@ -48,8 +48,8 @@ export default function MissionVisionPage() {
                     </div>
                     <div className="row justify-content-center g-4">
                         <div className="col-md-4 mb-3">
-                            <div className="card theme-dark-color h-100 shadow-sm border-0 text-center p-4 animate__animated animate__fadeInLeft">
-                                <div className="card-body">
+                            <div className="card theme-dark-color h-100 shadow-sm border-0 text-center p-4 animate__animated animate__fadeInLeft" style={{ borderRadius: "20px" }}>
+                                <div className="card-body" >
                                     <FaUsersCog className="text-info fs-3 mb-3" />
                                     <h5 className="fw-bold">Client-Centric Solutions</h5>
                                     <p className="text-muted small">
@@ -59,8 +59,8 @@ export default function MissionVisionPage() {
                             </div>
                         </div>
                         <div className="col-md-4 mb-3">
-                            <div className="card theme-dark-color h-100 shadow-sm border-0 text-center p-4 animate__animated animate__fadeInUp">
-                                <div className="card-body">
+                            <div className="card theme-dark-color h-100 shadow-sm border-0 text-center p-4 animate__animated animate__fadeInUp" style={{ borderRadius: "20px" }}>
+                                <div className="card-body" >
                                     <FaLightbulb className="text-success fs-3 mb-3" />
                                     <h5 className="fw-bold">Innovation & Quality</h5>
                                     <p className="text-muted small">
@@ -70,8 +70,8 @@ export default function MissionVisionPage() {
                             </div>
                         </div>
                         <div className="col-md-4 mb-3">
-                            <div className="card theme-dark-color h-100 shadow-sm border-0 text-center p-4 animate__animated animate__fadeInRight">
-                                <div className="card-body">
+                            <div className="card theme-dark-color h-100 shadow-sm border-0 text-center p-4 animate__animated animate__fadeInRight" style={{ borderRadius: "20px" }}>
+                                <div className="card-body" >
                                     <FaHandshake className="text-warning fs-3 mb-3" />
                                     <h5 className="fw-bold">Integrity & Trust</h5>
                                     <p className="text-muted small">
@@ -98,8 +98,8 @@ export default function MissionVisionPage() {
                     </div>
                     <div className="row justify-content-center g-4">
                         <div className="col-md-6 mb-3">
-                            <div className="card theme-dark-color h-100 shadow-sm border-0 p-4 animate__animated animate__fadeInLeft animation-delay-1">
-                                <div className="card-body">
+                            <div className="card theme-dark-color h-100 shadow-sm border-0 p-4 animate__animated animate__fadeInLeft animation-delay-1" style={{ borderRadius: "20px" }}>
+                                <div className="card-body" >
                                     <h5 className="fw-bold text-primary mb-3">Future-Forward Innovation</h5>
                                     <p className="card-text text-muted">
                                         To continuously push the boundaries of engineering and fabrication through research, development, and adoption of advanced technologies, ensuring we remain at the forefront of the industry.
@@ -108,8 +108,8 @@ export default function MissionVisionPage() {
                             </div>
                         </div>
                         <div className="col-md-6 mb-3">
-                            <div className="card theme-dark-color h-100 shadow-sm border-0 p-4 animate__animated animate__fadeInRight animation-delay-1">
-                                <div className="card-body">
+                            <div className="card theme-dark-color h-100 shadow-sm border-0 p-4 animate__animated animate__fadeInRight animation-delay-1" style={{ borderRadius: "20px" }}>
+                                <div className="card-body" >
                                     <h5 className="fw-bold text-primary mb-3">Sustainable Growth</h5>
                                     <p className="card-text text-muted">
                                         To achieve sustainable growth by expanding our capabilities, entering new markets, and fostering a culture of continuous improvement and environmental responsibility.
