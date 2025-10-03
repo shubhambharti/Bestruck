@@ -80,7 +80,7 @@ export default function CareerPage() {
                     <h2 className="text-center mb-5 display-5 fw-bold">Our Culture & Benefits</h2>
                     <div className="row text-center g-4">
                         <div className="col-md-3">
-                            <div className="card theme-dark-color h-100 shadow-sm p-4 border-0">
+                            <div className="card theme-dark-color h-100 shadow-sm p-4 border-0" style={{ borderRadius: "20px" }}>
                                 <div className="card-body">
                                     <FaUsers className="text-primary fs-1 mb-3" />
                                     <h5 className="card-title fw-bold">Collaborative Environment</h5>
@@ -89,7 +89,7 @@ export default function CareerPage() {
                             </div>
                         </div>
                         <div className="col-md-3">
-                            <div className="card theme-dark-color h-100 shadow-sm p-4 border-0">
+                            <div className="card theme-dark-color h-100 shadow-sm p-4 border-0" style={{ borderRadius: "20px" }}>
                                 <div className="card-body">
                                     <FaLightbulb className="text-success fs-1 mb-3" />
                                     <h5 className="card-title fw-bold">Innovation at Core</h5>
@@ -98,7 +98,7 @@ export default function CareerPage() {
                             </div>
                         </div>
                         <div className="col-md-3">
-                            <div className="card theme-dark-color h-100 shadow-sm p-4 border-0">
+                            <div className="card theme-dark-color h-100 shadow-sm p-4 border-0" style={{ borderRadius: "20px" }}>
                                 <div className="card-body">
                                     <FaBriefcase className="text-info fs-1 mb-3" />
                                     <h5 className="card-title fw-bold">Growth Opportunities</h5>
@@ -107,7 +107,7 @@ export default function CareerPage() {
                             </div>
                         </div>
                         <div className="col-md-3">
-                            <div className="card theme-dark-color h-100 shadow-sm p-4 border-0">
+                            <div className="card theme-dark-color h-100 shadow-sm p-4 border-0" style={{ borderRadius: "20px" }}>
                                 <div className="card-body">
                                     <FaHeart className="text-danger fs-1 mb-3" />
                                     <h5 className="card-title fw-bold">Employee Well-being</h5>
