@@ -3,9 +3,7 @@ import {
     FaBriefcase,
     FaUsers,
     FaLightbulb,
-    FaHeart,
-    FaChevronDown,
-    FaChevronUp,
+    FaHeart
 } from "react-icons/fa";
 import ContactForm from "../components/ContactForm";
 import Seo from "../components/Seo";
@@ -79,7 +77,7 @@ export default function CareerPage() {
                         Our Culture & Benefits
                     </h2>
                     <div className="row text-center g-4">
-                        <div className="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                        <div className="col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="100">
                             <div
                                 className="card theme-dark-color h-100 shadow-sm p-4 border-0"
                                 style={{ borderRadius: "20px" }}
@@ -96,7 +94,7 @@ export default function CareerPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+                        <div className="col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="200">
                             <div
                                 className="card theme-dark-color h-100 shadow-sm p-4 border-0"
                                 style={{ borderRadius: "20px" }}
@@ -111,7 +109,7 @@ export default function CareerPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+                        <div className="col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="300">
                             <div
                                 className="card theme-dark-color h-100 shadow-sm p-4 border-0"
                                 style={{ borderRadius: "20px" }}
@@ -126,7 +124,7 @@ export default function CareerPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-3" data-aos="zoom-in" data-aos-delay="400">
+                        <div className="col-md-3 mb-3" data-aos="zoom-in" data-aos-delay="400">
                             <div
                                 className="card theme-dark-color h-100 shadow-sm p-4 border-0"
                                 style={{ borderRadius: "20px" }}
