@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { useEffect, useRef } from "react";
+
 import Seo from "../../components/Seo"
 
 export default function HistoryPage() {

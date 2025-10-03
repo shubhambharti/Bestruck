@@ -1,5 +1,7 @@
 import { FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
-import Seo from "../components/Seo"
+import Seo from "../components/Seo";
+
+
 
 const teamMembers = [
     {
@@ -47,6 +49,7 @@ const teamMembers = [
 ];
 
 export default function PeoplePage() {
+
     return (
         <div className="people-page theme-color">
             <Seo
@@ -65,11 +68,12 @@ export default function PeoplePage() {
                     position: "relative"
                 }}
                 data-aos="fade-in"
-            ><div style={{
-                position: "absolute",
-                top: 0, left: 0, right: 0, bottom: 0,
-                backgroundColor: "rgba(0, 0, 0, 0.7)", /* Dark overlay */
-            }}></div>
+            >
+                <div style={{
+                    position: "absolute",
+                    top: 0, left: 0, right: 0, bottom: 0,
+                    backgroundColor: "rgba(0, 0, 0, 0.7)", /* Dark overlay */
+                }}></div>
                 <div className="container" style={{ zIndex: 1 }}>
                     <h1 className="display-4 fw-bold mb-3 animate__animated animate__fadeInDown">Meet Our Team</h1>
                     <p className="lead mb-4 animate__animated animate__fadeInUp">The passionate individuals driving our vision forward.</p>
@@ -81,25 +85,45 @@ export default function PeoplePage() {
                 <div className="container">
                     <div className="row g-4">
                         {teamMembers.map((member, index) => (
-                            <div key={index} className="col-lg-3 col-md-6 mb-3">
+                            <div
+                                key={index}
+                                className="col-lg-3 col-md-6 mb-3"
+                                data-aos="zoom-in"
+                                data-aos-delay={index * 150} // staggered animation
+                            >
                                 <div className="team-card-container">
-                                    <div className="team-card ">
-                                        <div className="team-card-front ">
+                                    <div className="team-card">
+                                        {/* Card Front */}
+                                        <div className="team-card-front">
                                             <img src={member.imageUrl} alt={member.name} className="team-member-image" />
                                             <div className="team-card-title theme-dark-color">
                                                 <h5 className="mb-0">{member.name}</h5>
                                                 <p className="text-primary small mb-0">{member.role}</p>
                                             </div>
                                         </div>
+
+                                        {/* Card Back */}
                                         <div className="team-card-back">
                                             <div className="team-card-back-content">
                                                 <h5 className="mb-1">{member.name}</h5>
                                                 <p className="text-primary small">{member.role}</p>
                                                 <p className="small mb-3">{member.bio}</p>
                                                 <div className="social-links">
-                                                    {member.social.linkedin && <a className='theme-text-color' href={member.social.linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>}
-                                                    {member.social.twitter && <a className='theme-text-color' href={member.social.twitter} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>}
-                                                    {member.social.email && <a className='theme-text-color' href={member.social.email}><FaEnvelope /></a>}
+                                                    {member.social.linkedin && (
+                                                        <a className="theme-text-color" href={member.social.linkedin} target="_blank" rel="noopener noreferrer">
+                                                            <FaLinkedin />
+                                                        </a>
+                                                    )}
+                                                    {member.social.twitter && (
+                                                        <a className="theme-text-color" href={member.social.twitter} target="_blank" rel="noopener noreferrer">
+                                                            <FaTwitter />
+                                                        </a>
+                                                    )}
+                                                    {member.social.email && (
+                                                        <a className="theme-text-color" href={member.social.email}>
+                                                            <FaEnvelope />
+                                                        </a>
+                                                    )}
                                                 </div>
                                             </div>
                                         </div>

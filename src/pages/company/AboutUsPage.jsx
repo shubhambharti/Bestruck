@@ -1,14 +1,9 @@
-// pages/AboutUs.jsx
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Seo from "../../components/Seo"
 
 export default function AboutUsPage() {
-    useEffect(() => {
-        AOS.init({ duration: 1000, once: true });
-    }, []);
+
 
     return (
         <div className="about-us-page theme-color">

@@ -13,8 +13,16 @@ import ContactUsPage from "./pages/ContactUsPage";
 import PeoplePage from "./pages/PeoplePage";
 import CareerPage from "./pages/CareerPage";
 import MissionVisionPage from "./pages/company/MissionVisionPage";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
+
 
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <BrowserRouter>
       <ScrollToTop />
