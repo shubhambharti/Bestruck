@@ -47,7 +47,7 @@ export default function AboutUsPage() {
                             Our journey started with a small workshop, and today we serve clients across
                             industries with reliability and trust.
                         </p>
-                        <Link to="/contact" className="btn btn-primary btn-lg mt-3">
+                        <Link to="/contactus" className="btn btn-primary btn-lg mt-3">
                             Contact Us
                         </Link>
                     </div>

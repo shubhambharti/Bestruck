@@ -70,7 +70,7 @@ export default function Customer() {
                                                     className="logo-img"
                                                 />
                                             ) : (
-                                                <div className="logo-placeholder">{logo.name}</div>
+                                                <div className="logo-placeholder">{logo.name.split(" ").map(w => w[0]).slice(0, 2).join("")}</div>
                                             )}
                                             <p className="logo-name">{logo.name}</p>
                                         </div>

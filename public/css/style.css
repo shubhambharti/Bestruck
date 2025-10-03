@@ -135,17 +135,16 @@
    ================================================================= */
 
 /* On hover, bring the logo to full color and scale it up slightly */
+/*  */
+/* --- Default Styles (Desktop) --- */
+
 .logo-grid {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 30px; /* space between rows */
-}
-
-.logo-wrapper {
-  text-align: center;
-  margin: 10px;
+  align-items: center; /* Center the rows horizontally */
+  gap: 30px;
 }
 
 .top-row,
@@ -153,18 +152,29 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start; /* Align items to the top to handle different text lengths */
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.logo-img {
+.logo-wrapper {
+  text-align: center;
+  margin: 10px;
+  width: 150px; /* Give wrapper a fixed width to prevent text from pushing others */
+}
+
+.logo-img,
+.logo-placeholder {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  transition: all 0.3s ease;
+  margin: 0 auto; /* Ensure the logo itself is centered in the wrapper */
+}
+
+.logo-img {
   object-fit: cover;
   filter: grayscale(100%) brightness(0.85);
-  transition: all 0.5s ease;
 }
 
 .logo-img:hover {
@@ -173,61 +183,77 @@
 }
 
 .logo-placeholder {
-  width: 100px;
-  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
   background-color: #ddd;
   color: #333;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: bold;
   padding: 5px;
   text-align: center;
 }
+
 .logo-placeholder:hover {
-  filter: grayscale(0%) brightness(1);
-  transform: scale(1.1);
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
   background-color: #c4c4c4;
   color: #4268a1;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 5px;
-  text-align: center;
+  transform: scale(1.1);
 }
 
 .logo-name {
-  margin-top: 8px;
-  font-size: 0.9rem;
-  color: #555;
+  margin-top: 12px;
+  font-size: 0.9rem; /* (approx 14.4px) Good default size */
+  line-height: 1.4; /* Good spacing for multi-line text */
+  color: #333;
+  font-weight: 600;
 }
 
+/* --- Responsive Styles --- */
+
+/* For Tablets */
 @media (max-width: 992px) {
   .logo-img,
   .logo-placeholder {
     width: 80px;
     height: 80px;
+    font-size: 2rem;
   }
   .logo-name {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* Corrected, readable font size */
+  }
+  .logo-wrapper {
+    width: 120px;
   }
 }
 
+/* For Mobile Phones */
+@media (max-width: 768px) {
+  .logo-name {
+    font-size: 3rem;
+  }
+  .logo-placeholder {
+    font-size: 2rem;
+  }
+  .top-row,
+  .bottom-row {
+    gap: 15px;
+  }
+}
+
+/* For Small Mobile Phones */
 @media (max-width: 576px) {
   .logo-img,
   .logo-placeholder {
     width: 60px;
     height: 60px;
+    font-size: 2rem;
   }
   .logo-name {
-    font-size: 0.75rem;
+    font-size: 0.7rem; /* Corrected, readable font size */
+  }
+  .logo-wrapper {
+    width: 90px;
+    margin: 5px;
   }
 }
 
@@ -429,15 +455,145 @@ body {
 
 /* -----------------COntact Us---------------- */
 /* Contact Us Form Enhancements */
-#message {
-  resize: none;
+/* --- Floating Label Group --- */
+.form-floating-group {
+  position: relative;
+  margin-bottom: 1.5rem; /* Adds space between fields */
 }
 
-.btn-danger {
+/* --- Input & Textarea Styling --- */
+.form-floating-group .form-control {
+  border: none;
+  border-bottom: 2px solid #ced4da; /* Underline */
+  border-radius: 10px; /* Remove rounded corners for a sharp look */
+  padding: 10px 10px; /* Adjust padding for better text alignment */
+  background-color: transparent;
+  font-weight: 500;
+  box-shadow: 0 2px rgba(173, 70, 39, 0.123);
+}
+
+/* Remove the default glowing outline on focus */
+.form-floating-group .form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: rgb(173, 70, 39); /* Highlight color on focus */
+}
+
+/* --- Label Styling --- */
+.form-floating-group .form-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-weight: 500;
+  color: #6c757d;
+  pointer-events: none; /* Allows clicking "through" the label to the input */
+  transition: all 0.2s ease-in-out;
+}
+
+/* --- The Magic: Floating Label Animation --- */
+/* This rule applies when the input is focused OR when it's not empty */
+.form-floating-group .form-control:focus + .form-label,
+.form-floating-group .form-control:not(:placeholder-shown) + .form-label {
+  transform: translateY(-24px) scale(0.85);
+  color: rgb(173, 70, 39); /* Match the focus border color */
+  background-color: white; /* Add background to cut through the line */
+  padding: 0 5px;
+  left: -2px; /* Slight adjustment for padding */
+}
+
+/* Specific styling for the textarea */
+#message {
+  resize: none;
+  min-height: 120px;
+}
+
+/* --- Professional Button Styling --- */
+.btn-submit {
+  background-color: rgb(173, 70, 39); /* A primary blue color */
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 50px; /* Pill shape */
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
-.btn-danger:hover {
-  background-color: rgb(173, 70, 39);
-  transform: translateY(-2px);
+.btn-submit:hover {
+  background-color: rgb(173, 70, 39); /* Darker blue on hover */
+  transform: translateY(-3px); /* Subtle lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Define your theme color as a CSS variable for easy changes */
+:root {
+  --theme-primary: rgb(173, 70, 39); /* Example: Bootstrap Blue */
+  --theme-primary-light: rgba(13, 110, 253, 0.1); /* 10% opacity version */
+}
+
+/* Main card styling */
+.contact-info-card {
+  background-color: #f8f9fa; /* bg-light */
+  border-radius: 1rem; /* rounded-4 */
+  padding: 0 2rem; /* p-4 equivalent with more space */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+}
+
+.contact-info-card h4 {
+  color: var(--theme-primary);
+}
+
+/* Flex container for each icon-text pair */
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+/* The colored circle behind the icon */
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px;
+  height: 45px;
+  background-color: var(--theme-primary-light);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+/* Styling the icon itself */
+.icon-circle svg {
+  color: var(--theme-primary);
+  font-size: 1.25rem;
+}
+
+/* Styling for the text (address and links) */
+.contact-item address,
+.contact-item a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #495057;
+  text-decoration: none;
+  margin-bottom: 0; /* Override default margins */
+  transition: color 0.2s ease-in-out;
+}
+
+/* Remove italics from address tag for a cleaner look */
+.contact-item address {
+  font-style: normal;
+}
+
+.contact-item a:hover {
+  color: var(--theme-primary);
+  text-decoration: underline;
+}
+
+/* Google Maps iframe styling */
+.contact-map {
+  border: none;
+  border-radius: 12px;
+  margin-top: 1rem; /* Add some space above the map */
+  filter: grayscale(20%); /* Optional: for a stylized map look */
 }

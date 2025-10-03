@@ -1,4 +1,3 @@
-// pages/ProductPage.jsx
 import { Link, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -9,7 +8,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// 🔹 Slugify helper
+//  Slugify helper
 function slugify(name) {
     return name
         .toLowerCase()
@@ -17,7 +16,7 @@ function slugify(name) {
         .replace(/[\/&]/g, "")
         .replace(/[^a-z0-9-]/g, "");
 }
-// 🔹 Product data
+//  Product data
 const products = [
     {
         name: "BACK REST MOUNTING",
@@ -159,7 +158,7 @@ export default function ProductPage() {
     return (
         <div className="container my-5 p-5 p-md-5">
             <main>
-                {/* ✅ Mobile View as Card */}
+                {/*  Mobile View as Card */}
                 <div className="card shadow-sm d-block d-md-none" data-aos="fade-up">
                     {/* Image */}
                     <Swiper
@@ -208,7 +207,7 @@ export default function ProductPage() {
                     </div>
                 </div>
 
-                {/* ✅ Desktop / Tablet View */}
+                {/*  Desktop / Tablet View */}
                 <div className="row g-4 align-items-center d-none d-md-flex">
                     {/* Image Slider */}
                     <div className="col-md-6" data-aos="fade-right">
@@ -259,7 +258,7 @@ export default function ProductPage() {
                     </div>
                 </div>
 
-                {/* ✅ Previous / Next Links (Common for all) */}
+                {/*  Previous / Next Links (Common for all) */}
                 <div className="row mt-5 g-4 align-items-center text-center text-md-start">
                     <div className="col-12 col-md-6 d-flex justify-content-md-start justify-content-center" data-aos="fade-right">
                         <Link
