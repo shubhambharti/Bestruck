@@ -130,17 +130,23 @@ export default function Footer() {
             </div>
 
             {/* Footer Bottom */}
-            <div className="d-flex justify-content-between">
-                <div className="container text-center py-3 small" data-aos="fade-right">
+            <div className="d-flex justify-content-evenly align-items-center small py-2">
+                <div className="text-center text-md-start mb-2 mb-md-0" >
                     &copy; {siteName}
                 </div>
-                <div className="container text-center py-3 small" data-aos="fade-left">
+                <div className="text-center text-md-end" >
                     Developed by{" "}
-                    <a href="https://shubhambhartiportfolio.netlify.app/" className="link-fancy theme-text-color" target="_blank" rel="noreferrer">
+                    <a
+                        href="https://shubhambhartiportfolio.netlify.app/"
+                        className="link-fancy theme-text-color"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         Shubham Bharti
                     </a>
                 </div>
             </div>
+
         </footer>
     );
 }

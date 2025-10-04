@@ -25,7 +25,7 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <Navbar />
       <Routes>
         {/* Home */}
