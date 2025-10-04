@@ -245,7 +245,7 @@ export default function ProductPage() {
                             <h1 className="mb-3 display-5 fw-bold">{product.name}</h1>
                             <p className="lead text-muted text-justify">{product.description}</p>
                             <div className="mt-4">
-                                <Link to="/enquiry" className="btn btn-outline-primary btn-theme-dark-color btn-lg me-2">
+                                <Link to="/contactus" className="btn btn-outline-primary btn-theme-dark-color btn-lg me-2">
                                     Enquire Now
                                 </Link>
                                 <a
