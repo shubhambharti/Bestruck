@@ -16,6 +16,7 @@ import MissionVisionPage from "./pages/company/MissionVisionPage";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Favicon from "./components/Favicon";
 
 
 
@@ -25,7 +26,8 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      {/* <ScrollToTop /> */}
+      <Favicon />
+      <ScrollToTop />
       <Navbar />
       <Routes>
         {/* Home */}
