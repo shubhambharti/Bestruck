@@ -1,6 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 import "./App.css";
+
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
@@ -13,24 +17,19 @@ import ContactUsPage from "./pages/ContactUsPage";
 import PeoplePage from "./pages/PeoplePage";
 import CareerPage from "./pages/CareerPage";
 import MissionVisionPage from "./pages/company/MissionVisionPage";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 import Favicon from "./components/Favicon";
 
-
-
-function App() {
+export default function App() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
   return (
     <BrowserRouter>
       <Favicon />
       <ScrollToTop />
       <Navbar />
       <Routes>
-        {/* Home */}
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<AboutUsPage />} />
         <Route path="/history" element={<HistoryPage />} />
@@ -48,5 +47,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;

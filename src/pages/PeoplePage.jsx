@@ -1,7 +1,6 @@
 import { FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+
 import Seo from "../components/Seo";
-
-
 
 const teamMembers = [
     {
@@ -72,7 +71,7 @@ export default function PeoplePage() {
                 <div style={{
                     position: "absolute",
                     top: 0, left: 0, right: 0, bottom: 0,
-                    backgroundColor: "rgba(0, 0, 0, 0.7)", /* Dark overlay */
+                    backgroundColor: "rgba(0, 0, 0, 0.7)",
                 }}></div>
                 <div className="container" style={{ zIndex: 1 }}>
                     <h1 className="display-4 fw-bold mb-3 animate__animated animate__fadeInDown">Meet Our Team</h1>
@@ -89,7 +88,7 @@ export default function PeoplePage() {
                                 key={index}
                                 className="col-lg-3 col-md-6 mb-3"
                                 data-aos="zoom-in"
-                                data-aos-delay={index * 150} // staggered animation
+                                data-aos-delay={index * 150}
                             >
                                 <div className="team-card-container">
                                     <div className="team-card">

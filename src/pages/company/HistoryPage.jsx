@@ -80,14 +80,6 @@ export default function HistoryPage() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-    // useEffect(() => {
-    //     const navbar = document.getElementById("navScroll");
-    //     const hero = document.querySelector(".hero-section");
-    //     if (navbar && hero) {
-    //         hero.style.paddingTop = navbar.offsetHeight + "px";
-    //     }
-    // }, []);
-
 
     return (
         <div className="history-page theme-color">
@@ -109,7 +101,7 @@ export default function HistoryPage() {
             ><div style={{
                 position: "absolute",
                 top: 0, left: 0, right: 0, bottom: 0,
-                backgroundColor: "rgba(0, 0, 0, 0.7)", /* Dark overlay */
+                backgroundColor: "rgba(0, 0, 0, 0.7)",
             }}></div>
                 <div className="container" style={{ zIndex: 1 }}>
                     <h1 className="display-4 fw-bold mb-3 animate__animated animate__fadeInDown">Our Journey</h1>

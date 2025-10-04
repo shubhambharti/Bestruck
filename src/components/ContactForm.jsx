@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { FiSend, FiBriefcase, FiUpload } from 'react-icons/fi';
+import { useState } from 'react';
+import { FiSend } from 'react-icons/fi';
 
 // For a real app, this would be imported from a shared data file
 const jobOpenings = [
@@ -13,7 +13,7 @@ export default function ContactForm({
     formDescription,
     submitButtonText,
     onSubmitSuccess,
-    isCareerForm = false // New prop to control which fields are shown
+    isCareerForm = false
 }) {
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({
@@ -48,8 +48,6 @@ export default function ContactForm({
         form.classList.add('was-validated');
 
         if (form.checkValidity()) {
-            // In a real app, you'd send the data to a backend.
-            // For file uploads, you'd use FormData.
             console.log("Form Submitted:", formData);
             if (onSubmitSuccess) onSubmitSuccess(formData);
 
@@ -147,7 +145,6 @@ export default function ContactForm({
                             </div>
                         </div>
 
-
                         {/* --- Resume File Upload --- */}
                         <div className="col-12">
                             <div className="form-floating-group">
@@ -168,18 +165,16 @@ export default function ContactForm({
                             </div>
                         </div>
                     </>
-                )
-
-                    : (
-                        // --- Field for Contact Us Page ---
-                        <div className="col-md-6">
-                            <div className="form-floating-group">
-                                <input type="text" className="form-control" id="subject" name="subject" placeholder=" " value={formData.subject} onChange={handleChange} required />
-                                <label className="form-label" htmlFor="subject">Subject</label>
-                                <div className="invalid-feedback">Please enter a subject.</div>
-                            </div>
+                ) : (
+                    // --- Field for Contact Us Page ---
+                    <div className="col-md-6">
+                        <div className="form-floating-group">
+                            <input type="text" className="form-control" id="subject" name="subject" placeholder=" " value={formData.subject} onChange={handleChange} required />
+                            <label className="form-label" htmlFor="subject">Subject</label>
+                            <div className="invalid-feedback">Please enter a subject.</div>
                         </div>
-                    )}
+                    </div>
+                )}
 
                 {/* --- Message Field (Common to both) --- */}
                 <div className="col-12">

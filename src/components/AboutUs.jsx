@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 export default function AboutUs() {
@@ -33,7 +32,6 @@ export default function AboutUs() {
                                 Resolve customer complaints as soon as possible.
                             </p>
                         </div>
-
                         <div
                             className="col-md-6 col-lg-4 py-vh-4 pb-0"
                             data-aos="fade-up"
@@ -50,7 +48,6 @@ export default function AboutUs() {
                                 product compliance with industry standards and regulations.
                             </p>
                         </div>
-
                         <div
                             className="col-md-6 col-lg-4 py-vh-6 pb-0"
                             data-aos="fade-up"

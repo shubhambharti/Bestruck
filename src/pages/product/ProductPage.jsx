@@ -1,14 +1,12 @@
 import { Link, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
-import { useEffect } from "react";
-
 
 import Seo from "../../components/Seo"
-
 
 //  Slugify helper
 function slugify(name) {
@@ -164,7 +162,6 @@ export default function ProductPage() {
                 <main>
                     {/*  Mobile View as Card */}
                     <div className="card shadow-sm theme-dark-color p-2 d-block d-md-none" data-aos="fade-up">
-                        {/* Image */}
                         <Swiper
                             modules={[Navigation, Pagination]}
                             spaceBetween={10}
@@ -193,7 +190,6 @@ export default function ProductPage() {
                             ))}
                         </Swiper>
 
-                        {/* Card Body */}
                         <div className="card-body theme-dark-color text-center">
                             <h2 className="card-title fw-bold" data-aos="fade-up">{product.name}</h2>
                             <p className="card-text text-muted text-justify" data-aos="fade-up" data-aos-delay="200">{product.description}</p>
@@ -214,7 +210,6 @@ export default function ProductPage() {
 
                     {/*  Desktop / Tablet View */}
                     <div className="row g-4 theme-color align-items-center d-none d-md-flex">
-                        {/* Image Slider */}
                         <div className="col-md-6" data-aos="fade-right">
                             <Swiper
                                 modules={[Navigation, Pagination]}
@@ -274,7 +269,6 @@ export default function ProductPage() {
                                 &larr; {previousProduct.name}
                             </Link>
                         </div>
-
                         <div className="col-12 col-md-6 d-flex justify-content-md-end justify-content-center" data-aos="fade-left">
                             <Link
                                 to={`/product/${nextProduct.slug}`}
@@ -287,6 +281,5 @@ export default function ProductPage() {
                 </main>
             </div>
         </div>
-
     );
 }

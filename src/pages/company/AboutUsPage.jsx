@@ -1,10 +1,7 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Seo from "../../components/Seo"
 
 export default function AboutUsPage() {
-
-
     return (
         <div className="about-us-page theme-color">
             <Seo
@@ -25,7 +22,7 @@ export default function AboutUsPage() {
             ><div style={{
                 position: "absolute",
                 top: 0, left: 0, right: 0, bottom: 0,
-                backgroundColor: "rgba(0, 0, 0, 0.7)", /* Dark overlay */
+                backgroundColor: "rgba(0, 0, 0, 0.7)",
             }}></div>
                 <div className="container" style={{ zIndex: 1 }}>
                     <h1 className="display-4 fw-bold mb-3 animate__animated animate__fadeInDown">About Us</h1>

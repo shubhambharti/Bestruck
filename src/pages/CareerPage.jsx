@@ -5,8 +5,9 @@ import {
     FaLightbulb,
     FaHeart
 } from "react-icons/fa";
-import ContactForm from "../components/ContactForm";
+
 import Seo from "../components/Seo";
+import ContactForm from "../components/ContactForm";
 
 export default function CareerPage() {
     const [openJobId, setOpenJobId] = useState(null);
@@ -46,7 +47,7 @@ export default function CareerPage() {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        backgroundColor: "rgba(0, 0, 0, 0.7)", // overlay
+                        backgroundColor: "rgba(0, 0, 0, 0.7)",
                     }}
                 ></div>
                 <div className="container" style={{ zIndex: 1 }}>

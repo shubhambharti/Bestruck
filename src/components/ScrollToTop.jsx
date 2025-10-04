@@ -1,7 +1,5 @@
-// src/components/ScrollToTop.jsx
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { FaArrowUp } from 'react-icons/fa'; // Import the icon
 import { FaPersonArrowUpFromLine } from "react-icons/fa6";
 
 export default function ScrollToTop() {

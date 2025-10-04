@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom'
+
+import Seo from "../components/Seo"
 import AboutUs from '../components/AboutUs'
 import Customer from '../components/Customer'
-import { Link } from 'react-router-dom'
-import Seo from "../components/Seo"
 
 
 export default function HomePage() {

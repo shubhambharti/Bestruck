@@ -1,9 +1,7 @@
 import { Helmet } from 'react-helmet';
 
 export default function Seo({ title, description }) {
-    // Access VITE_SITE_NAME once here
-    const siteName = import.meta.env.VITE_SITE_NAME || "MF Engineers And Fabrications";
-
+    const siteName = import.meta.env.VITE_SITE_NAME || "MF Engineering And Fabrication";
     const fullTitle = title ? `${title} | ${siteName}` : siteName;
 
     return (

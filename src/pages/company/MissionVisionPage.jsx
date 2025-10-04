@@ -1,8 +1,7 @@
-// src/pages/company/MissionVisionPage.jsx
-import React, { useEffect } from 'react';
-import Seo from '../../components/Seo';
-import { FaBullseye, FaEye, FaUsersCog, FaHandshake, FaLightbulb } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { FaBullseye, FaEye, FaUsersCog, FaHandshake, FaLightbulb } from 'react-icons/fa';
+
+import Seo from '../../components/Seo';
 
 
 
